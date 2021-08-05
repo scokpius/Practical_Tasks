@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Practical_Tasks" />
+        <module name="Task_Animate_the_OOP_model" />
       </profile>
     </annotationProcessing>
   </component>
