@@ -23,10 +23,6 @@ public class Guest {
     }
 
     public boolean isAdultGuest(int age) {
-        if (age > 17) {
-            return true;
-        }
-        return false;
+        return age > 17;
     }
-
 }

@@ -1,13 +1,14 @@
 import java.util.Arrays;
+import java.util.List;
 
 public class HotelRoom {
     private String hotelRoomName;
     private Price price;
     private int numberOfPeopleSleep;
     private int areaRoom;
-    private String[] photoRoom;
+    private List<String>[] photoRoom;
 
-    public HotelRoom(String roomName, Price priceIn, int numberOfPeopleSleep, int areaRoom, String[] photoRoom) {
+    public HotelRoom(String roomName, Price priceIn, int numberOfPeopleSleep, int areaRoom, List<String>[] photoRoom) {
         this.hotelRoomName = roomName;
         this.price = priceIn;
         this.numberOfPeopleSleep = numberOfPeopleSleep;
@@ -48,11 +49,11 @@ public class HotelRoom {
     }
 
 
-    public String[] getPhotoRoom() {
+    public List<String>[] getPhotoRoom() {
         return photoRoom;
     }
 
-    public void setPhotoRoom(String[] photoRoom) {
+    public void setPhotoRoom(List<String>[] photoRoom) {
         this.photoRoom = Arrays.copyOf(photoRoom, photoRoom.length);
     }
 
