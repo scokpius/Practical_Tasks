@@ -1,10 +1,11 @@
 import javax.xml.crypto.Data;
+import java.util.List;
 
 public class HotelSearch {
     private Location location;
     private Data arriveDate;
     private Data departureDate;
-    private Room[] rooms;
+    private List<Room> rooms;
 
 
     public Location getLocation() {
@@ -31,23 +32,24 @@ public class HotelSearch {
         this.departureDate = departureDate;
     }
 
-    public Room[] getRooms() {
+    public List<Room> getRooms() {
         return rooms;
     }
 
-    public void setRooms(Room[] room) {
-        System.arraycopy(room, 0, rooms, 0, rooms.length);
+    public void setRooms(List<Room> room) {
+        this.rooms.addAll(room);
     }
 
-    // На сайте так устроенно что в 1 комнату могут заселиться только 4 гостя разного возраста
-    // если гостей 5 то автомотически увелисивается количество комнот до 2
-    public int countNumberRooms(Room room) {
+    // На сайте так устроенно что в 1 номер могут заселиться только 4 гостя разного возраста
+    // если гостей 5 то автомотически увелисивается количество номеров до 2
+    // функция нужна для определения количества номеров (может понадобиться для проверки)
+    public int countNumberRooms(List<Guest> guests) {  //расчитывает минимальный размер List<Room>
         int countNumberRooms = 0;
-        if (room.getGuests().size() > 0) {
-            if (room.getGuests().size() % 4 > 0) {
-                countNumberRooms = room.getGuests().size() / 4 + 1;
+        if (guests.size() > 0) {
+            if (guests.size() % 4 > 0) {
+                countNumberRooms = guests.size() / 4 + 1;
             } else {
-                countNumberRooms = room.getGuests().size() / 4;
+                countNumberRooms = guests.size() / 4;
             }
         }
         return countNumberRooms;
@@ -60,6 +62,4 @@ public class HotelSearch {
         }
         return countGuest;
     }
-
-
 }

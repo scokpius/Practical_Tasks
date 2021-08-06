@@ -6,14 +6,14 @@ public class HotelRoom {
     private Price price;
     private int numberOfPeopleSleep;
     private int areaRoom;
-    private List<String>[] photoRoom;
+    private List<String> photoRoom;
 
-    public HotelRoom(String roomName, Price priceIn, int numberOfPeopleSleep, int areaRoom, List<String>[] photoRoom) {
+    public HotelRoom(String roomName, Price priceIn, int numberOfPeopleSleep, int areaRoom, List<String> photo) {
         this.hotelRoomName = roomName;
         this.price = priceIn;
         this.numberOfPeopleSleep = numberOfPeopleSleep;
         this.areaRoom = areaRoom;
-        this.photoRoom = Arrays.copyOf(photoRoom, photoRoom.length);
+        this.photoRoom.addAll(photo);
     }
 
     public String getHotelRoomName() {
@@ -49,12 +49,12 @@ public class HotelRoom {
     }
 
 
-    public List<String>[] getPhotoRoom() {
+    public List<String> getPhotoRoom() {
         return photoRoom;
     }
 
-    public void setPhotoRoom(List<String>[] photoRoom) {
-        this.photoRoom = Arrays.copyOf(photoRoom, photoRoom.length);
+    public void setPhotoRoom(List<String> photoRoom) {
+        this.photoRoom.addAll(photoRoom);
     }
 
     public double calculateCostForNumberDays(int days) {

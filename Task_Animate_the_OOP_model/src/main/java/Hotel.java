@@ -3,26 +3,24 @@ import java.util.List;
 
 public class Hotel {
     private String hotelName;
-    private List<HotelRoom>[] listRooms;
-    private List<String>[] photoHotel;
+    private List<HotelRoom> listRooms;
+    private List<String> photoHotel;
     private Location location;
 
-    public List<String>[] getPhotoHotel() {
+    public List<String> getPhotoHotel() {
         return photoHotel;
     }
 
-    public void setPhotoHotel(List<String>[] photoHotel) {
-        this.photoHotel = Arrays.copyOf(photoHotel, photoHotel.length);
+    public void setPhotoHotel(List<String> photoHotel) {
+        this.photoHotel.addAll(photoHotel);
     }
 
-    public List<HotelRoom>[] getListRooms() {
+    public List<HotelRoom> getListRooms() {
         return listRooms;
     }
 
-    public void setListRooms(HotelRoom[] rooms) {
-        for (int i = 0; i < listRooms.length; i++) {
-            listRooms[i].add(rooms[i]);
-        }
+    public void setListRooms(List<HotelRoom> rooms) {
+        listRooms.addAll(rooms);
     }
 
     public String getHotelName() {
