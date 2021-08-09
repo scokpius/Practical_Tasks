@@ -1,18 +1,20 @@
-import java.util.Arrays;
 import java.util.List;
 
 public class Hotel {
-    private String hotelName;
+    private final String hotelName;
     private List<HotelRoom> listRooms;
-    private List<String> photoHotel;
-    private Location location;
+    private final List<String> photoHotel;
+    private final Location location;
+
+    public Hotel(String hotelName, List<HotelRoom> listRooms, List<String> photoHotel, Location location) {
+        this.hotelName = hotelName;
+        this.listRooms = listRooms;
+        this.photoHotel = photoHotel;
+        this.location = location;
+    }
 
     public List<String> getPhotoHotel() {
         return photoHotel;
-    }
-
-    public void setPhotoHotel(List<String> photoHotel) {
-        this.photoHotel.addAll(photoHotel);
     }
 
     public List<HotelRoom> getListRooms() {
@@ -20,14 +22,11 @@ public class Hotel {
     }
 
     public void setListRooms(List<HotelRoom> rooms) {
-        listRooms.addAll(rooms);
+        this.listRooms = rooms;
     }
 
     public String getHotelName() {
         return hotelName;
     }
 
-    public void setHotelName(String hotelName) {
-        this.hotelName = hotelName;
-    }
 }
