@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Room {
@@ -18,11 +17,7 @@ public class Room {
     }
 
     public List<Guest> addGuest(Guest guest) {
-        for (int i = 0; i < guests.size(); i++) {
-            if (guests.get(i) == null) {
-                guests.add(guest);
-            }
-        }
+        this.guests.add(guest);
         return this.guests;
     }
 }
