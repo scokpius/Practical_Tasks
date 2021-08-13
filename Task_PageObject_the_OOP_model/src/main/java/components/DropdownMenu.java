@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class DropdownMenu {
 
-    // локаторы
     private final String buttonDropdown;
     private final String dropdown;
 

@@ -9,9 +9,8 @@ import static constant.XPathCSS.*;
 
 public class Header {
 
-    DialogSingIn dialogSingIn;
-    DialogCreateAccount dialogCreateAccount;
-
+    private final DialogSingIn dialogSingIn;
+    private final DialogCreateAccount dialogCreateAccount;
     private final DropdownMenu dropdownAccount;
     private final DropdownMenu dropdownCurrency;
     private final Menu menu;
@@ -33,12 +32,12 @@ public class Header {
     }
 
     public void clickSingIn(String locator, String email, String password) {
-        $(locator).click();
+        $(By.xpath(locator)).click();
         dialogSingIn.logInAccount(email, password);
     }
 
     public void clickSingUp(String locator, String firstName, String lastName, String email, String password) {
-        $(locator).click();
+        $(By.xpath(locator)).click();
         dialogCreateAccount.registerAnAccount(firstName, lastName, email, password);
     }
 

@@ -1,37 +1,43 @@
 package page;
 
-import org.openqa.selenium.By;
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import java.util.List;
+
+import static constant.XPathCSS.*;
 
 public class HotelInformationPage {
 
-    public static final String FIGURE_PHOTOS_CSS = "#Overview > div > div";
-    public static final String FIELD_NAME_HOTEL_XPATH = "//*[@class=\"uitk-heading-3\"]";
-    public static final String INPUT_LOCATION_XPATH = " //*[@itemprop=\"address\"]";
-    public static final String SELECT_LIST_ROOMS_CSS = "#Offers > span > div:nth-child(3) > div>div";
-    public static final String LINK_MORE_DETAILS = "//*[@id=\"Offers\"]/span/div[3]/div/div[3]/div[1]/div/button";
+    @FindBy(how = How.XPATH, using = IMG_LIST_PHOTOS_XPATH)
+    private SelenideElement imgPhotos;
+    @FindBy(how = How.XPATH, using = FIELD_NAME_HOTEL_XPATH)
+    private SelenideElement fieldNameHotel;
+    @FindBy(how = How.XPATH, using = INPUT_LOCATION_XPATH)
+    private SelenideElement inputLocation;
+    @FindBy(how = How.XPATH, using = SELECT_LIST_ROOMS_XPATH)
+    private List<SelenideElement> selectListRooms;
+    @FindBy(how = How.XPATH, using = LINK_MORE_DETAILS_XPATH)
+    private List<SelenideElement> linkMoreDetails;
 
 
     public boolean getIsPhotos() {
-        return  $(FIGURE_PHOTOS_CSS).isDisplayed();
+        return imgPhotos.isDisplayed();
 
     }
 
     public RoomInformationPage selectRoom() {
-        $$(SELECT_LIST_ROOMS_CSS).get(0).should();
-        $$(LINK_MORE_DETAILS).get(0);
-    return new RoomInformationPage();
+        selectListRooms.get(0).should();
+        linkMoreDetails.get(0);
+        return new RoomInformationPage();
     }
 
-    public String getNameHotel(){
-        return $(By.xpath(FIELD_NAME_HOTEL_XPATH)).getText();
+    public String getNameHotel() {
+        return fieldNameHotel.getText();
     }
 
-    public String getLocation(){
-        return $(INPUT_LOCATION_XPATH).getText();
+    public String getLocation() {
+        return inputLocation.getText();
     }
-
-
 }

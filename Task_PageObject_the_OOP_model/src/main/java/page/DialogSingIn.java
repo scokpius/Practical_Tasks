@@ -1,21 +1,36 @@
 package page;
 
-import org.openqa.selenium.By;
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 import java.time.Duration;
 
-import static com.codeborne.selenide.Selenide.$;
+import static constant.XPathCSS.*;
 
 public class DialogSingIn {
-    public static final String INPUT_EMAIL_CSS = "#email";
-    public static final String INPUT_PASSWORD_CSS = "#password";
-    public static final String BUTTON_SING_IN_XPATH = "//*[@class = \"form-row\"]/button";
+
+    @FindBy(how = How.CSS, using = INPUT_EMAIL_CSS)
+    private SelenideElement inputEmail;
+    @FindBy(how = How.CSS, using = INPUT_PASSWORD_CSS)
+    private SelenideElement inputPassword;
+    @FindBy(how = How.XPATH, using = BUTTON_SING_IN_XPATH)
+    private SelenideElement buttonSignIn;
 
 
     public void logInAccount(String email, String password) {
-        $(INPUT_EMAIL_CSS).setValue(email).shouldBe(Condition.visible, Duration.ofSeconds(5));
-        $(INPUT_PASSWORD_CSS).setValue(password).shouldBe(Condition.visible, Duration.ofSeconds(5));
-        $(By.xpath(BUTTON_SING_IN_XPATH)).shouldBe(Condition.visible, Duration.ofSeconds(10)).click();
-     }
+        inputEmail.setValue(email).shouldBe(Condition.visible, Duration.ofSeconds(5));
+        inputPassword.setValue(password).shouldBe(Condition.visible, Duration.ofSeconds(5));
+        buttonSignIn.shouldBe(Condition.visible, Duration.ofSeconds(10)).click();
+        new HomePage();
+    }
+
+    public SelenideElement getInputEmail() {
+        return inputEmail;
+    }
+
+    public SelenideElement getInputPassword() {
+        return inputPassword;
+    }
 }

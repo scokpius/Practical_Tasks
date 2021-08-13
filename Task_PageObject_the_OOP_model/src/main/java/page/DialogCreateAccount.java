@@ -1,25 +1,26 @@
 package page;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
+import static constant.XPathCSS.*;
 
 public class DialogCreateAccount extends DialogSingIn {
 
-    public static final String INPUT_FIRST_NAME_CSS = "#firstName";
-    public static final String INPUT_LAST_NAME_CSS = "#lastName";
-    public static final String BUTTON_SING_UP_XPATH = "//*[@id=\"signin-model\"]/div/div/div[2]/form/div[2]/div[1]/button";
+    private final SelenideElement inputFirstName = $(INPUT_FIRST_NAME_CSS);
+    private final SelenideElement inputLastName = $(INPUT_LAST_NAME_CSS);
+    private final SelenideElement buttonSignUn = $(By.xpath(BUTTON_SING_UP_XPATH));
 
     public void registerAnAccount(String firstName, String lastName, String email, String password) {
-        $(INPUT_FIRST_NAME_CSS).setValue(firstName).shouldBe(Condition.visible, Duration.ofSeconds(5));
-        $(INPUT_LAST_NAME_CSS).setValue(lastName).shouldBe(Condition.visible, Duration.ofSeconds(5));
-        Selenide.$(DialogSingIn.INPUT_EMAIL_CSS).setValue(email).shouldBe(Condition.visible, Duration.ofSeconds(5));
-        Selenide.$(DialogSingIn.INPUT_PASSWORD_CSS).setValue(password).shouldBe(Condition.visible, Duration.ofSeconds(5));
-        $(By.xpath(BUTTON_SING_UP_XPATH)).shouldBe(Condition.visible, Duration.ofSeconds(5)).click();
+        inputFirstName.setValue(firstName).shouldBe(Condition.visible, Duration.ofSeconds(5));
+        inputLastName.setValue(lastName).shouldBe(Condition.visible, Duration.ofSeconds(5));
+        super.getInputEmail().setValue(email).shouldBe(Condition.visible, Duration.ofSeconds(5));
+        super.getInputPassword().setValue(password).shouldBe(Condition.visible, Duration.ofSeconds(5));
+        buttonSignUn.shouldBe(Condition.visible, Duration.ofSeconds(5)).click();
         new HomePage();
     }
 }

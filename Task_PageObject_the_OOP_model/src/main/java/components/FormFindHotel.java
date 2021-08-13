@@ -1,33 +1,21 @@
 package components;
 
-import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.SelenideElement;
+import components.search_options.SearchOptions;
+import components.search_options.SearchOptionsHotels;
 import org.openqa.selenium.By;
 
-import java.time.Duration;
-
 import static com.codeborne.selenide.Selenide.$;
+import static constant.XPathCSS.*;
 
-public class FormFindHotel extends SearchOptions {
+public class FormFindHotel {
 
-    public String inputLocation;
+    private final SelenideElement inputLocation = $(By.xpath(HOTEL_PAGE_INPUT_LOCATION_XPATH));
+    private final SearchOptions searchOptions = new SearchOptionsHotels();
 
-    //локаторы
-    public FormFindHotel(String inputLocation, String buttonCheckIn, String buttonCheckOut,
-                         String buttonGuests, String dropdownGuests, String buttonFind, String dropdownCalendar,
-                         String buttonPrev, String buttonNext, String textMonth, String textDay,
-                         String textAmount, String buttonAddAndMin, String buttonDone) {
-        super(buttonCheckIn, buttonCheckOut, buttonGuests, dropdownGuests, buttonFind, dropdownCalendar, buttonPrev,
-                buttonNext, textMonth, textDay, textAmount, buttonAddAndMin, buttonDone);
-        this.inputLocation = inputLocation;
+    public SelenideElement getInputLocation() {
+        return inputLocation;
     }
 
 
-    public void writeFindSearch(String location, String monthIn, String dayIn, String yerIn,
-                                String monthOut, String dayOut, String yerOut, int room, int adult, int children) {
-        $(By.xpath(inputLocation)).setValue(location).
-                shouldBe(Condition.visible, Duration.ofSeconds(3)).pressEnter();
-        chooseCheckInDate(monthIn, dayIn, yerIn);
-        chooseCheckOutDate(monthOut, dayOut, yerOut);
-        chooseGuests(room, adult, children);
-    }
 }

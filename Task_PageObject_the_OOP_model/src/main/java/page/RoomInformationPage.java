@@ -1,20 +1,34 @@
 package page;
 
-import org.openqa.selenium.By;
+import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static constant.XPathCSS.*;
 
 public class RoomInformationPage {
 
-    public static final String FIGURE_PHOTOS_XPATH = "//*[@id=\"app-layer-room-info-201940577\"]//figure/div/img";
-    public static final String FIELD_NAME_ROOM = "//*[@id=\"app-layer-room-info-201940577\"]//*[@data-stid=\"property-offers-details-dialog-header\"]/h3";
-    public static final String SPAN_AREA = "//*[@id=\"app-layer-room-info-201940577\"]//div[2]/ul/li[1]";
-    public static final String SPAN_SLEEPERS = "//*[@id=\"app-layer-room-info-201940577\"]//div[2]/ul/li[2]";
-    public static final String SPAN_BEDS = "//*[@id=\"app-layer-room-info-201940577\"]//div[2]/ul/li[3]";
+    @FindBy(how = How.XPATH, using = IMG_PHOTO_XPATH)
+    private SelenideElement imgPhoto;
+    @FindBy(how = How.XPATH, using = FIELD_NAME_ROOM_XPATH)
+    private SelenideElement fielderNameRoom;
+    @FindBy(how = How.XPATH, using = SPAN_AREA_XPATH)
+    private SelenideElement spanArea;
+    @FindBy(how = How.XPATH, using = SPAN_SLEEPERS_XPATH)
+    private SelenideElement spanSleepers;
+    @FindBy(how = How.XPATH, using = SPAN_BEDS_XPATH)
+    private SelenideElement spanBeds;
+    @FindBy(how = How.XPATH, using = SPAN_PRICE_PER_NIGHT_XPATH)
+    private SelenideElement spanPricePerNight;
+    @FindBy(how = How.XPATH, using = DROPDOWN_PRICE_XPATH)
+    private SelenideElement dropdownPrice;
+    @FindBy(how = How.XPATH, using = SPAN_PRICE_ALL_TIME_XPATH)
+    private SelenideElement spanPrice;
+
 
     public boolean getIsFieldNameRoom() {
-        return $(By.xpath(FIGURE_PHOTOS_XPATH)).isDisplayed();
+        return imgPhoto.isDisplayed();
 
     }
 
@@ -24,19 +38,27 @@ public class RoomInformationPage {
     }
 
     public void getFieldNameRoom() {
-        $(By.xpath(FIELD_NAME_ROOM)).getText();
+        fielderNameRoom.getText();
     }
 
     public void getArea() {
-        $(By.xpath(SPAN_AREA)).getText();
+        spanArea.getText();
     }
 
 
     public void getNumberSleepers() {
-        $(By.xpath(SPAN_SLEEPERS)).getText();
+        spanSleepers.getText();
     }
 
     public void getNumberBeds() {
-        $(By.xpath(SPAN_BEDS)).getText();
+        spanBeds.getText();
+    }
+
+    public SelenideElement getSpanPricePerNight() {
+        return spanPricePerNight;
+    }
+
+    public SelenideElement getSpanPrice() {
+        return spanPrice;
     }
 }
