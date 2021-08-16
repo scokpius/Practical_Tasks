@@ -37,10 +37,12 @@ public abstract class Guests {
         setValue(buttonAddChildren, buttonMinChildren);
     }
 
+    public void clickButtonGuests() {
+        buttonGuests.click();
+    }
     public void clickButtonDone() {
         buttonDone.click();
     }
-
     private void setValue(SelenideElement buttonAdd, SelenideElement buttonMin) {
         if (initialValue < totalValue) {
             while (totalValue - initialValue != 0)

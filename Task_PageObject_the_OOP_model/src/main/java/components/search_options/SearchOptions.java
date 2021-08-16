@@ -20,6 +20,7 @@ public abstract class SearchOptions {
     }
 
     public void chooseGuests(String amountRoom, String amountAdult, String amountChildren) {
+        buttonGuests.clickButtonGuests();
         buttonGuests.setNumberOfRooms(amountRoom);
         buttonGuests.setNumberOfAdult(amountAdult);
         buttonGuests.setNumberOfAChildren(amountChildren);

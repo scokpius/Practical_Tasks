@@ -1,6 +1,8 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
+import components.search_options.SearchOptions;
+import components.search_options.SearchOptionsHotelInformation;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -11,7 +13,7 @@ import static constant.XPathCSS.*;
 public class HotelInformationPage {
 
     @FindBy(how = How.XPATH, using = IMG_LIST_PHOTOS_XPATH)
-    private SelenideElement imgPhotos;
+    private List<SelenideElement> imgPhotos;
     @FindBy(how = How.XPATH, using = FIELD_NAME_HOTEL_XPATH)
     private SelenideElement fieldNameHotel;
     @FindBy(how = How.XPATH, using = INPUT_LOCATION_XPATH)
@@ -21,15 +23,17 @@ public class HotelInformationPage {
     @FindBy(how = How.XPATH, using = LINK_MORE_DETAILS_XPATH)
     private List<SelenideElement> linkMoreDetails;
 
+    private SearchOptions searchOptionsHotelInformation = new SearchOptionsHotelInformation();
+
 
     public boolean getIsPhotos() {
-        return imgPhotos.isDisplayed();
-
+        if (imgPhotos.size()==0) return false;
+        return true;
     }
 
-    public RoomInformationPage selectRoom() {
-        selectListRooms.get(0).should();
-        linkMoreDetails.get(0);
+    public RoomInformationPage selectRoom(int selectedRoom) {
+        selectListRooms.get(selectedRoom).should();
+        linkMoreDetails.get(selectedRoom);
         return new RoomInformationPage();
     }
 
@@ -40,4 +44,20 @@ public class HotelInformationPage {
     public String getLocation() {
         return inputLocation.getText();
     }
+
+    public void getCheckIn(String month, String day, String yer) {
+        searchOptionsHotelInformation.chooseCheckInDate(month, day, yer);
+    }
+
+    public void getCheckOut(String month, String day, String yer) {
+        searchOptionsHotelInformation.chooseCheckInDate(month, day, yer);
+    }
+
+    public void getGuests(String numberRooms, String numberAdult, String numberChildren) {
+        searchOptionsHotelInformation.chooseGuests(numberRooms, numberAdult, numberChildren);
+    }
+    public void clickButtonRates() {
+        searchOptionsHotelInformation.clickButton();
+    }
+
 }

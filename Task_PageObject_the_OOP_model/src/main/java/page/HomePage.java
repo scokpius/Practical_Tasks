@@ -3,6 +3,7 @@ package page;
 import com.codeborne.selenide.WebDriverRunner;
 import components.FunctionMenu;
 import components.Header;
+import lombok.Getter;
 import org.apache.commons.lang3.time.DateUtils;
 import org.openqa.selenium.Cookie;
 
@@ -12,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import static com.codeborne.selenide.Selenide.open;
 import static constant.XPathCSS.*;
 
-
+@Getter
 public class HomePage {
 
     public Header header;
@@ -55,6 +56,9 @@ public class HomePage {
     public void clickFunctionMenu(String nameFunction) {
         functionMenu.functionMenuNavigation(nameFunction);
     }
+
+
+
 
 }
 

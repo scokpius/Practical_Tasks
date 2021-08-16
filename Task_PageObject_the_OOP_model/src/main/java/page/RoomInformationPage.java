@@ -45,7 +45,6 @@ public class RoomInformationPage {
         spanArea.getText();
     }
 
-
     public void getNumberSleepers() {
         spanSleepers.getText();
     }
@@ -54,11 +53,12 @@ public class RoomInformationPage {
         spanBeds.getText();
     }
 
-    public SelenideElement getSpanPricePerNight() {
-        return spanPricePerNight;
+    public void getSpanPricePerNight() {
+        spanPricePerNight.getText();
     }
 
-    public SelenideElement getSpanPrice() {
-        return spanPrice;
+    public void getSpanPrice() {
+        dropdownPrice.click();
+        spanPrice.getText();
     }
 }

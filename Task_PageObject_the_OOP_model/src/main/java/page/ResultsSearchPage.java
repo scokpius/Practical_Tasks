@@ -27,4 +27,9 @@ public class ResultsSearchPage {
     public List<SelenideElement> getList() {
         return list;
     }
+
+    public HotelInformationPage chooseHotelInformation(int number){
+        list.get(number).click();
+        return new HotelInformationPage();
+    }
 }

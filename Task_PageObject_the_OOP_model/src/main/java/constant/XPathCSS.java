@@ -36,7 +36,7 @@ public class XPathCSS {
     public static final String BUTTON_ACCOUNT_ELEMENTS_XPATH = "//*[@id=\"dropdown-account-options--container\"]/li[5]";
     public static final String LINK_LIST_MENU_XPATH = "//*[@id=\"root\"]/div[1]/nav/div/ul/li/a";
     //HomePage
-    public static final String HOME_PAGE_BUTTON_SING_UP_XPATH = " //*[@data-bdd=\"sign-in\"]"; // buttonSignUp локатор
+    public static final String HOME_PAGE_BUTTON_SING_UP_XPATH = " //*[@data-bdd=\"sign-in\"]";
     public static final String HOME_PAGE_BUTTON_SING_IN_XPATH = "#collapsibleNavbar > ul > li.nav-item.sign.auth-buttons.auth-buttons--visible > button.btn.btn-default.sign-in.btn-xs"; // buttonSignIn локатор
     public static final String HOME_PAGE_LIST_FUNCTIONS_XPATH = "//*[@class=\"farefinder-option-label hw-body-1 type-300\"]"; // "//*[@class=\"farefinder-options\"]/div";
     public static final String HOME_PAGE_INPUT_LOCATION_XPATH = " //*[@data-bdd=\"farefinder-hotel-destination-input\"]";
@@ -52,7 +52,7 @@ public class XPathCSS {
     public static final String HOME_PAGE_TEXT_DAY_XPATH = "//td[contains(@aria-label, '%s %s, %s')]";
     public static final String HOME_PAGE_DROPDOWN_TEXT_AMOUNT_XPATH = HOME_PAGE_BUTTON_GUESTS_DROPDOWN_XPATH + "/div//input";
     public static final String HOME_PAGE_BUTTON_ADD_MIN_XPATH = "//*[@class=\"guest-fields\"]/div[%d]//button[%d]";
-    public static final String HOME_PAGE_TEXT_AMOUNT_ROOM_XPATH = "//*[@id=\"farefinder-occupant-selector-hotel-rooms\"]";
+    public static final String HOME_PAGE_TEXT_AMOUNT_ROOM_XPATH = "//*[@id=\"farefinder-occupant-selector-hotel-rooms\"]"; //*[@id="farefinder-occupant-selector-hotel-rooms"]
     public static final String HOME_PAGE_TEXT_AMOUNT_ADULT_XPATH = " //*[@id=\"farefinder-occupant-selector-hotel-adults\"]";
     public static final String HOME_PAGE_TEXT_AMOUNT_CHILDREN_XPATH = "//*[@id=\"farefinder-occupant-selector-hotel-children\"]";
     public static final String HOME_PAGE_BUTTON_DONE_XPATH = "//*[@class=\"btn btn-primary btn-sm\"]";

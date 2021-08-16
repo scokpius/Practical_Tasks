@@ -3,6 +3,7 @@ package page;
 import com.codeborne.selenide.Condition;
 import components.FormFindHotel;
 import components.Header;
+import lombok.Getter;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
@@ -10,7 +11,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static constant.XPathCSS.*;
-
+@Getter
 public class HotelsPage {
 
     private final Header header;

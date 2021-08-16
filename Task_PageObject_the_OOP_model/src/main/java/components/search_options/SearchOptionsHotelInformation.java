@@ -23,4 +23,5 @@ public class SearchOptionsHotelInformation extends SearchOptions {
         super.buttonGuests = new GuestsHotelInformation(buttonGuestsHotelInformation);
         super.button = buttonFindHotelInformation;
     }
+
 }
