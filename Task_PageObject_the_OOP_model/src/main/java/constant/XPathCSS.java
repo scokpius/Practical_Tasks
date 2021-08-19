@@ -18,7 +18,7 @@ public class XPathCSS {
     public static final String DROPDOWN_PRICE_XPATH = "//*[@class=\"uitk-menu uitk-menu-mounted\"]/button[contains(@aria-expanded, 'true')] ";
     public static final String SPAN_PRICE_ALL_TIME_XPATH = "//*[@class=\"uitk-type-300 uitk-type-regular uitk-text-emphasis-theme\"]"; // 6 элемент
     //ResultSearch
-    public static final String SELECT_LIST_RESULT_SEARCH_XPATH = "//*[@class=\"result-list-components\"]";
+    public static final String SELECT_LIST_RESULT_SEARCH_XPATH = "//*[@class=\"result-list-components\"]//*[@class=\"HotelCardLayout__hotel-name\"]/span"; // "//*[@class=\"result-list-components\"]";
     public static final String BUTTON_STANDARD_RATE_HOTELS_XPATH = "//*[@class=\"SegmentedControllerCard\"][@value=\"RETAIL\"]";
     public  static final String BUTTON_CONTINUE_XPATH = "//*[@class=\"btn btn-primary\"]";
     //HotelInformation
@@ -71,7 +71,9 @@ public class XPathCSS {
     public static final String HOTEL_PAGE_TEXT_DAY_XPATH = "//button[contains(@aria-label, '%s %s, %s')] ";
     public static final String HOTEL_PAGE_CALENDAR_BUTTON_DONE_XPATH = "//*[@data-stid=\"apply-date-picker\"]";
     public static final String HOTEL_PAGE_DROPDOWN_TEXT_AMOUNT_XPATH = HOTEL_PAGE_BUTTON_GUESTS_DROPDOWN_XPATH + "/div//input";
-    public static final String HOTEL_PAGE_BUTTON_ADD_MIN_XPATH = "//*[@id=\"adaptive-menu\"]/div[2]/div/section/div[2]/button";//проверить
+    public static final String HOTEL_PAGE_BUTTON_ADD_MIN_XPATH = "//*[@id=\"adaptive-menu\"]/div[2]/div/section/div[2]/button"; // "//div[contains(@data-testid, 'room-2')]//div[contains(@class, 'uitk-step-input-controls')]/button[1]"
+
+
     public static final String HOTEL_PAGE_BUTTON_DONE_XPATH = "//*[@data-testid=\"guests-done-button\"]";
     //HotelInformationPage
     public static final String HOTEL_INFORMATION_PAGE_BUTTON_CHECK_IN_XPATH = "//*[@data-bdd = \"farefinder-hotel-startdate-input\"]";

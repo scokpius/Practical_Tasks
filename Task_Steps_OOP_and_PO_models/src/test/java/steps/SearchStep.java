@@ -59,25 +59,6 @@ public class SearchStep {
         return "2";
     }
 
-
-
-
-
-
 }
 
 
-
-//    public void chooseCheckInDateCheckOutDate (String monthInDate, String dayInDate, String yerInDate,
-//                                               String monthOutDate, String dayOutDate, String yerOutDate){
-//        homePage.getFunctionMenu().getFormFindHome().getSearchOptions().chooseCheckInDate(monthInDate, dayInDate, yerInDate);
-//        homePage.getFunctionMenu().getFormFindHome().getSearchOptions().chooseCheckOutDate(monthOutDate,dayOutDate, yerOutDate);
-//    }
-//
-//    public void chooseGuests (String numberRooms, String numberAdult, String numberChildren) {
-//        homePage.getFunctionMenu().getFormFindHome().getSearchOptions().chooseGuests(numberRooms, numberAdult, numberChildren);
-//    }
-//
-//    public void clickButtonFind(){
-//       homePage.getFunctionMenu().getFormFindHome().getSearchOptions().clickButton();
-//    }
