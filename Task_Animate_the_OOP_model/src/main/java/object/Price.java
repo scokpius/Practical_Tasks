@@ -1,3 +1,5 @@
+package object;
+
 public class Price {
     private Currency currency;
     private double sum;

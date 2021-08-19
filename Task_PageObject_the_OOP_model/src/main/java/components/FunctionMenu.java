@@ -8,16 +8,11 @@ import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$$;
 import static constant.XPathCSS.*;
-
 @Getter
 public class FunctionMenu {
 
     private final List<SelenideElement> elementList = $$(By.xpath(HOME_PAGE_LIST_FUNCTIONS_XPATH));
     private FormFindHome formFindHome;
-
-    public FunctionMenu() {
-        this.formFindHome = new FormFindHome();
-    }
 
     public void functionMenuNavigation(String name) {
         for (int i = 0; i < elementList.size(); i++) {
@@ -26,6 +21,4 @@ public class FunctionMenu {
             }
         }
     }
-
-
 }

@@ -1,3 +1,5 @@
+package object;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,4 +22,6 @@ public class Room {
         this.guests.add(guest);
         return this.guests;
     }
+
+
 }

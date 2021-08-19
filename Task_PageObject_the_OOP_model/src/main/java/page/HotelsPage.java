@@ -15,7 +15,7 @@ import static constant.XPathCSS.*;
 public class HotelsPage {
 
     private final Header header;
-    private FormFindHotel formFindHotel;
+    private final FormFindHotel formFindHotel;
 
     public HotelsPage() {
         header = new Header();
@@ -30,4 +30,5 @@ public class HotelsPage {
     public void waitForUpdateHotelPage() {
         $(By.xpath(HOTEL_PAGE)).shouldBe(Condition.visible, Duration.ofSeconds(5));
     }
+
 }

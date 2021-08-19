@@ -1,3 +1,5 @@
+package object;
+
 public class Location {
     private String countryName;
     private String regionName;

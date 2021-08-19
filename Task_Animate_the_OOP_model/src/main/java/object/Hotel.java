@@ -1,4 +1,7 @@
+package object;
+
 import java.util.List;
+
 
 public class Hotel {
     private final String hotelName;
@@ -28,5 +31,7 @@ public class Hotel {
     public String getHotelName() {
         return hotelName;
     }
-
+    public String setHotelName(String text) {
+        return hotelName;
+    }
 }

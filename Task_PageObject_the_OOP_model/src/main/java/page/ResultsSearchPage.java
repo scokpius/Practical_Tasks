@@ -1,13 +1,14 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
+import lombok.Getter;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
 import java.util.List;
 
 import static constant.XPathCSS.*;
-
+@Getter
 public class ResultsSearchPage {
     @FindBy(how = How.XPATH, using = SELECT_LIST_RESULT_SEARCH_XPATH)
     private List<SelenideElement> list;
@@ -15,6 +16,7 @@ public class ResultsSearchPage {
     private SelenideElement buttonStandardRateHotels;
     @FindBy(how = How.XPATH, using = BUTTON_CONTINUE_XPATH)
     private SelenideElement buttonContinue;
+
 
     public void clickStandardRateHotels() {
         buttonStandardRateHotels.click();

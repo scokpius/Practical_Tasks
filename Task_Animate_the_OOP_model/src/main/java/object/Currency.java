@@ -1,3 +1,5 @@
+package object;
+
 public class Currency {
     private String currencyName;
     private String code;
