@@ -1,3 +1,8 @@
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class Location {
     private String countryName;
     private String regionName;
@@ -9,27 +14,27 @@ public class Location {
         this.townName = townName;
     }
 
-    public String getCountryName() {
-        return countryName;
-    }
-
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
-    }
-
-    public String getRegionName() {
-        return regionName;
-    }
-
-    public void setRegionName(String regionName) {
-        this.regionName = regionName;
-    }
-
-    public String getTownName() {
-        return townName;
-    }
-
-    public void setTownName(String townName) {
-        this.townName = townName;
-    }
+//    public String getCountryName() {
+//        return countryName;
+//    }
+//
+//    public void setCountryName(String countryName) {
+//        this.countryName = countryName;
+//    }
+//
+//    public String getRegionName() {
+//        return regionName;
+//    }
+//
+//    public void setRegionName(String regionName) {
+//        this.regionName = regionName;
+//    }
+//
+//    public String getTownName() {
+//        return townName;
+//    }
+//
+//    public void setTownName(String townName) {
+//        this.townName = townName;
+//    }
 }

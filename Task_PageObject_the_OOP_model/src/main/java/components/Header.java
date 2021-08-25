@@ -1,12 +1,13 @@
 package components;
 
+import lombok.Getter;
 import org.openqa.selenium.By;
 import page.DialogCreateAccount;
 import page.DialogSingIn;
-
 import static com.codeborne.selenide.Selenide.$;
 import static constant.XPathCSS.*;
 
+@Getter
 public class Header {
 
     private final DialogSingIn dialogSingIn;
@@ -21,14 +22,6 @@ public class Header {
         dropdownCurrency = new DropdownMenu(BUTTON_CURRENCY_XPATH, BUTTON_CURRENCY_CONTAINER_XPATH);
         dropdownAccount = new DropdownMenu(BUTTON_ACCOUNT_XPATH, BUTTON_ACCOUNT_CONTAINER_XPATH);
         menu = new Menu();
-    }
-
-    public DropdownMenu getDropdownAccount() {
-        return dropdownAccount;
-    }
-
-    public DropdownMenu getDropdownCurrency() {
-        return dropdownCurrency;
     }
 
     public void clickSingIn(String locator, String email, String password) {
@@ -46,9 +39,7 @@ public class Header {
         $(By.xpath(element)).click();
     }
 
-    public String chooseFunction() {
-        return menu.menuNavigation();
+    public String chooseFunction(String nameButton) {
+         return menu.menuNavigation(nameButton);
     }
-
-
 }

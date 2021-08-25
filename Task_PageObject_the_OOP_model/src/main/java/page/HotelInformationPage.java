@@ -21,7 +21,6 @@ public class HotelInformationPage {
     @FindBy(how = How.XPATH, using = LINK_MORE_DETAILS_XPATH)
     private List<SelenideElement> linkMoreDetails;
 
-
     public boolean getIsPhotos() {
         return imgPhotos.isDisplayed();
 

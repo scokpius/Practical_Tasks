@@ -29,7 +29,6 @@ public class RoomInformationPage {
 
     public boolean getIsFieldNameRoom() {
         return imgPhoto.isDisplayed();
-
     }
 
     public RoomInformationPage enterTheSite(String locator) {
@@ -59,6 +58,7 @@ public class RoomInformationPage {
     }
 
     public SelenideElement getSpanPrice() {
+        dropdownPrice.click();
         return spanPrice;
     }
 }

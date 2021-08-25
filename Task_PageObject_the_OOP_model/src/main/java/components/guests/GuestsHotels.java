@@ -4,29 +4,29 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static constant.XPathCSS.*;
 
 public class GuestsHotels extends Guests {
 
-    private final SelenideElement textAmountRoomsHotels = $(By.xpath(HOME_PAGE_TEXT_AMOUNT_ROOM_XPATH));
-    private final SelenideElement textAmountAdultHotels = $(By.xpath(HOME_PAGE_TEXT_AMOUNT_ADULT_XPATH));
-    private final SelenideElement textAmountChildrenHotels = $(By.xpath(HOME_PAGE_TEXT_AMOUNT_CHILDREN_XPATH));
-    private final String buttonAddAndMinHotels = HOTEL_PAGE_BUTTON_ADD_MIN_XPATH;
-    private final SelenideElement buttonDoneHotels = $(By.xpath(HOTEL_PAGE_BUTTON_DONE_XPATH));
-
-    private final SelenideElement dropdownTextAmount = $(By.xpath(HOTEL_PAGE_DROPDOWN_TEXT_AMOUNT_XPATH));
-
     public GuestsHotels(SelenideElement buttonGuests) {
         super.buttonGuests = buttonGuests;
-        super.textAmountRooms = textAmountRoomsHotels;
-        super.textAmountAdult = textAmountAdultHotels;
-        super.textAmountChildren = textAmountChildrenHotels;
-        super.buttonAddRoom = $(String.format(buttonAddAndMinHotels, 1, 2));
-        super.buttonMinRoom = $(String.format(buttonAddAndMinHotels, 1, 1));
-        super.buttonAddAdult = $(String.format(buttonAddAndMinHotels, 2, 2));
-        super.buttonMinAdult = $(String.format(buttonAddAndMinHotels, 2, 1));
-        super.buttonAddChildren = $(String.format(buttonAddAndMinHotels, 3, 2));
-        super.buttonMinChildren = $(String.format(buttonAddAndMinHotels, 3, 1));
-        super.buttonDone = buttonDoneHotels;
+        super.textAmountRooms = $(By.xpath(HOTEL_PAGE_TEXT_AMOUNT_ROOM_XPATH));
+        super.textAmountAdult = $(By.xpath(HOTEL_PAGE_TEXT_AMOUNT_ADULT_XPATH));
+        super.textAmountChildren = $(By.xpath(HOTEL_PAGE_TEXT_AMOUNT_CHILDREN_XPATH));
+        super.buttonAddRoom = $(By.xpath(HOTEL_PAGE_BUTTON_ADD_ROOM_XPATH));
+        super.buttonMinRoom = $(By.xpath(HOTEL_PAGE_BUTTON_MIN_ROOM_XPATH));
+        super.buttonAddAdult = $$(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(0);
+        super.buttonMinAdult = $$(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(1);
+        super.buttonAddChildren = $$(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(2);
+        super.buttonMinChildren = $$(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(3);
+        super.buttonDone = $(By.xpath(HOTEL_PAGE_BUTTON_DONE_XPATH));
+    }
+
+    @Override
+    public void setNumberOfRooms(String amountRoom) {
+        super.setInitialValue(Integer.parseInt(textAmountRooms.getText().substring(5,6)));
+        super.setTotalValue(Integer.parseInt(amountRoom));
+        super.setValue(buttonAddRoom, buttonMinRoom);
     }
 }

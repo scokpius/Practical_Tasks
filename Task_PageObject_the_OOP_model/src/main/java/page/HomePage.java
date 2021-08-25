@@ -1,18 +1,22 @@
 package page;
 
+import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import components.FunctionMenu;
 import components.Header;
+import lombok.Getter;
 import org.apache.commons.lang3.time.DateUtils;
 import org.openqa.selenium.Cookie;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static constant.XPathCSS.*;
 
-
+@Getter
 public class HomePage {
 
     public Header header;
@@ -48,37 +52,24 @@ public class HomePage {
         header.clickSingUp(HOME_PAGE_BUTTON_SING_IN_XPATH, firstName, lastName, email, password);
     }
 
-    public void chooseCurrency() {
-        header.chooseElement(BUTTON_CURRENCY_ELEMENTS_XPATH, header.getDropdownCurrency());
+    public void chooseCurrency(String currencyCode) {
+        header.chooseElement(String.format(BUTTON_CURRENCY_ELEMENTS_XPATH, currencyCode), header.getDropdownCurrency());
     }
 
-    public void clickFunctionMenu(String nameFunction) {
+    public HotelsPage clickButtonMenu(String nameFunction) {
+        return new HotelsPage().goToHotelPage(header.chooseFunction(nameFunction));
+    }
+
+    public void clickButtonFunctionMenu(String nameFunction) {
         functionMenu.functionMenuNavigation(nameFunction);
     }
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /*
     public void chooseSignOut() {
         header.chooseElement(BUTTON_ACCOUNT_ELEMENTS_XPATH, header.getDropdownAccount());
+    }
+
+    public void waitForPageLoaded() {
+        Configuration.timeout = 10000;
     }
 
     public void waitVisibleCurrency(String locator) {
@@ -89,17 +80,5 @@ public class HomePage {
         $(locator).shouldBe(Condition.disabled);
     }
 
-    public void searchForHotel(String location, String monthIn, String dayIn, String yerIn,
-                               String monthOut, String dayOut, String yerOut,
-                               int room, int adult, int children) {
-        super.writeFindSearch(location, monthIn, dayIn, yerIn, monthOut, dayOut, yerOut, room,
-                adult, children);
-        new ResultsSearchPage();
-    }
 
-    public void chooseFunction() {
-        String locator = header.chooseFunction();
-        new HotelsPage().goToHotelPage(locator).waitForUpdateHotelPage();
-
-    }*/
-
+}

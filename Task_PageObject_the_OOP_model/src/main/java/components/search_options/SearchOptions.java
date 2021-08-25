@@ -3,6 +3,9 @@ package components.search_options;
 import com.codeborne.selenide.SelenideElement;
 import components.calendar_date.CalendarDate;
 import components.guests.Guests;
+import page.ResultsSearchPage;
+
+import java.time.LocalDate;
 
 public abstract class SearchOptions {
 
@@ -11,23 +14,25 @@ public abstract class SearchOptions {
     protected Guests buttonGuests;
     protected SelenideElement button;
 
-    public void chooseCheckInDate(String month, String day, String yer) {
-        dateCheckIn.selectDate(month, day, yer);
+    public void chooseCheckInDate(LocalDate localDate) {
+        dateCheckIn.selectDate(localDate);
     }
 
-    public void chooseCheckOutDate(String month, String day, String yer) {
-        dateCheckOut.selectDate(month, day, yer);
+    public void chooseCheckOutDate(LocalDate localDate) {
+        dateCheckOut.selectDate(localDate);
     }
 
     public void chooseGuests(String amountRoom, String amountAdult, String amountChildren) {
+        buttonGuests.clickButtonGuests();
         buttonGuests.setNumberOfRooms(amountRoom);
         buttonGuests.setNumberOfAdult(amountAdult);
         buttonGuests.setNumberOfAChildren(amountChildren);
         buttonGuests.clickButtonDone();
     }
 
-    public void clickButton() {
+    public ResultsSearchPage clickButton() {
         button.click();
+        return new ResultsSearchPage();
     }
 
 }

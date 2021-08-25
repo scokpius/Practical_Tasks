@@ -1,9 +1,11 @@
 package components.guests;
 
-
 import com.codeborne.selenide.SelenideElement;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Setter
+@Getter
 public abstract class Guests {
     protected SelenideElement buttonGuests;
     protected SelenideElement textAmountRooms;
@@ -18,6 +20,10 @@ public abstract class Guests {
     protected SelenideElement buttonDone;
     private Integer totalValue;
     private Integer initialValue;
+
+    public void clickButtonGuests() {
+        buttonGuests.click();
+    }
 
     public void setNumberOfRooms(String amountRoom) {
         initialValue = Integer.parseInt(textAmountRooms.getValue());
@@ -41,14 +47,18 @@ public abstract class Guests {
         buttonDone.click();
     }
 
-    private void setValue(SelenideElement buttonAdd, SelenideElement buttonMin) {
+    void setValue(SelenideElement buttonAdd, SelenideElement buttonMin) {
         if (initialValue < totalValue) {
-            while (totalValue - initialValue != 0)
+            while (totalValue - initialValue != 0){
                 buttonAdd.click();
+                initialValue = initialValue + 1;
+            }
         } else {
             if (initialValue > totalValue) {
-                while (initialValue - totalValue != 0)
+                while (initialValue - totalValue != 0){
                     buttonMin.click();
+                    initialValue = initialValue- 1;
+                }
             }
         }
     }

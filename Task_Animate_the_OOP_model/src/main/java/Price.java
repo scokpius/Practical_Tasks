@@ -1,27 +1,34 @@
-public class Price {
-    private Currency currency;
-    private double sum;
+import lombok.Getter;
+import lombok.Setter;
 
-    public Price(Currency currency, double sum) {
+import java.math.BigDecimal;
+
+@Getter
+@Setter
+public class Price {
+    private final Currency currency;
+    private final BigDecimal sum;
+
+    public Price(Currency currency, BigDecimal sum) {
         this.currency = currency;
         this.sum = sum;
     }
 
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
-
-    public double getSum() {
+//    public Currency getCurrency() {
+//        return currency;
+//    }
+//
+//    public void setCurrency(Currency currency) {
+//        this.currency = currency;
+//    }
+//
+    public BigDecimal getSum() {
         return sum;
     }
-
-    public void setSum(double sum) {
-        this.sum = sum;
-    }
+//
+//    public void setSum(double sum) {
+//        this.sum = sum;
+//    }
 
     public String makeUpPrice() {
         String price;

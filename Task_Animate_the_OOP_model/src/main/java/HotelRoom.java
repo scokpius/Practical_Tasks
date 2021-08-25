@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.List;
 
 public class HotelRoom {
@@ -16,28 +17,28 @@ public class HotelRoom {
         this.photoRoom = photo;
     }
 
-    public String getHotelRoomName() {
-        return hotelRoomName;
-    }
-
     public Price getPrice() {
         return price;
     }
+//
+//    public String getHotelRoomName() {
+//        return hotelRoomName;
+//    }
+//
+//    public int getNumberOfPeopleSleep() {
+//        return numberOfPeopleSleep;
+//    }
+//
+//    public int getAreaRoom() {
+//        return areaRoom;
+//    }
+//
+//
+//    public List<String> getPhotoRoom() {
+//        return photoRoom;
+//    }
 
-    public int getNumberOfPeopleSleep() {
-        return numberOfPeopleSleep;
-    }
-
-    public int getAreaRoom() {
-        return areaRoom;
-    }
-
-
-    public List<String> getPhotoRoom() {
-        return photoRoom;
-    }
-
-    public double calculateCostForNumberDays(int days) {
-        return getPrice().getSum() * days;
+    public BigDecimal calculateCostForNumberDays(int days) {
+        return getPrice().getSum().multiply(BigDecimal.valueOf(days));
     }
 }

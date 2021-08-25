@@ -1,5 +1,8 @@
+import lombok.Getter;
+
 import java.util.List;
 
+@Getter
 public class Hotel {
     private final String hotelName;
     private List<HotelRoom> listRooms;
@@ -13,20 +16,20 @@ public class Hotel {
         this.location = location;
     }
 
-    public List<String> getPhotoHotel() {
-        return photoHotel;
-    }
-
-    public List<HotelRoom> getListRooms() {
-        return listRooms;
-    }
-
-    public void setListRooms(List<HotelRoom> rooms) {
-        this.listRooms = rooms;
-    }
-
-    public String getHotelName() {
-        return hotelName;
-    }
+//    public List<String> getPhotoHotel() {
+//        return photoHotel;
+//    }
+//
+//    public List<HotelRoom> getListRooms() {
+//        return listRooms;
+//    }
+//
+//    public void setListRooms(List<HotelRoom> rooms) {
+//        this.listRooms = rooms;
+//    }
+//
+//    public String getHotelName() {
+//        return hotelName;
+//    }
 
 }
