@@ -52,16 +52,18 @@ public class HomePage {
         header.clickSingUp(HOME_PAGE_BUTTON_SING_IN_XPATH, firstName, lastName, email, password);
     }
 
-    public void chooseCurrency(String currencyCode) {
-        header.chooseElement(String.format(BUTTON_CURRENCY_ELEMENTS_XPATH, currencyCode), header.getDropdownCurrency());
+    public void chooseCurrency(String currency) {
+        header.chooseElement(String.format(BUTTON_CURRENCY_SEARCH_ELEMENTS_XPATH, currency), header.getDropdownCurrency());
     }
 
-    public HotelsPage clickButtonMenu(String nameFunction) {
-        return new HotelsPage().goToHotelPage(header.chooseFunction(nameFunction));
+    public HotelsPage goToHotelPage() {
+            header.clickButtonHotelsMenu();
+        return new HotelsPage();
     }
 
-    public void clickButtonFunctionMenu(String nameFunction) {
+    public void chooseHotelsTabClick(String nameFunction) {
         functionMenu.functionMenuNavigation(nameFunction);
+        waitForPageLoaded();
     }
 
     public void chooseSignOut() {

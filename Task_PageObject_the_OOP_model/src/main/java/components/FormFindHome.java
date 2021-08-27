@@ -14,8 +14,4 @@ public class FormFindHome {
 
     private final SelenideElement inputLocation = $(By.xpath(HOME_PAGE_INPUT_LOCATION_XPATH));
     private final SearchOptions searchOptions = new SearchOptionsHome();
-
-//    public SelenideElement getInputLocation() {
-//        return inputLocation;
-//    }
 }

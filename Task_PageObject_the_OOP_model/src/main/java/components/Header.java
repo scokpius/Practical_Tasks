@@ -4,6 +4,8 @@ import lombok.Getter;
 import org.openqa.selenium.By;
 import page.DialogCreateAccount;
 import page.DialogSingIn;
+import page.HotelsPage;
+
 import static com.codeborne.selenide.Selenide.$;
 import static constant.XPathCSS.*;
 
@@ -39,7 +41,12 @@ public class Header {
         $(By.xpath(element)).click();
     }
 
-    public String chooseFunction(String nameButton) {
-         return menu.menuNavigation(nameButton);
+    public String verifyCurrency(){
+      return  $(By.xpath(BUTTON_CURRENCY_VERIFY_ELEMENTS_XPATH)).getText();
+    }
+
+    public HotelsPage clickButtonHotelsMenu() {
+        menu.getButtonMenu().click();
+        return new HotelsPage();
     }
 }

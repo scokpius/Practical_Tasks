@@ -1,42 +1,36 @@
 package page;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+import lombok.Getter;
+import org.openqa.selenium.By;
 
 import java.util.List;
 
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 import static constant.XPathCSS.*;
 
+@Getter
 public class HotelInformationPage {
 
-    @FindBy(how = How.XPATH, using = IMG_LIST_PHOTOS_XPATH)
-    private SelenideElement imgPhotos;
-    @FindBy(how = How.XPATH, using = FIELD_NAME_HOTEL_XPATH)
-    private SelenideElement fieldNameHotel;
-    @FindBy(how = How.XPATH, using = INPUT_LOCATION_XPATH)
-    private SelenideElement inputLocation;
-    @FindBy(how = How.XPATH, using = SELECT_LIST_ROOMS_XPATH)
-    private List<SelenideElement> selectListRooms;
-    @FindBy(how = How.XPATH, using = LINK_MORE_DETAILS_XPATH)
-    private List<SelenideElement> linkMoreDetails;
+
+    private final List<SelenideElement>  imgListPhotos = $$(By.xpath(IMG_LIST_PHOTOS_XPATH));
+    private final SelenideElement fieldNameHotel = $(By.xpath(FIELD_NAME_HOTEL_XPATH));
+    private final SelenideElement inputLocation = $(By.xpath(INPUT_LOCATION_XPATH));
+    private final List<SelenideElement> listNameRooms = $$(By.xpath(SELECT_LIST_NAME_ROOMS_XPATH));
+    private final List<SelenideElement> linkMoreDetails = $$(By.xpath(LINK_MORE_DETAILS_XPATH));
 
     public boolean getIsPhotos() {
-        return imgPhotos.isDisplayed();
-
+        return imgListPhotos.get(0).isDisplayed();
     }
 
-    public RoomInformationPage selectRoom() {
-        selectListRooms.get(0).should();
-        linkMoreDetails.get(0);
+    public RoomInformationPage selectRoom(int index) {
+        linkMoreDetails.get(index).click();
         return new RoomInformationPage();
     }
-
-    public String getNameHotel() {
-        return fieldNameHotel.getText();
-    }
-
-    public String getLocation() {
-        return inputLocation.getText();
+    public HotelInformationPage waitForUpdateHotelInformationPage() {
+        Configuration.timeout = 10000;
+        return this;
     }
 }

@@ -12,7 +12,7 @@ public abstract class SearchOptions {
     protected CalendarDate dateCheckIn;
     protected CalendarDate dateCheckOut;
     protected Guests buttonGuests;
-    protected SelenideElement button;
+    protected SelenideElement buttonFindOfHotel;
 
     public void chooseCheckInDate(LocalDate localDate) {
         dateCheckIn.selectDate(localDate);
@@ -30,11 +30,10 @@ public abstract class SearchOptions {
         buttonGuests.clickButtonDone();
     }
 
-    public ResultsSearchPage clickButton() {
-        button.click();
+    public ResultsSearchPage clickButtonFindOfHotel() {
+        buttonFindOfHotel.click();
         return new ResultsSearchPage();
     }
-
 }
 
 

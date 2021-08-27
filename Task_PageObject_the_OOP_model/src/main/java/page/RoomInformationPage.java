@@ -1,62 +1,29 @@
 package page;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
+import lombok.Getter;
+import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.$;
 import static constant.XPathCSS.*;
-
+@Getter
 public class RoomInformationPage {
 
-    @FindBy(how = How.XPATH, using = IMG_PHOTO_XPATH)
-    private SelenideElement imgPhoto;
-    @FindBy(how = How.XPATH, using = FIELD_NAME_ROOM_XPATH)
-    private SelenideElement fielderNameRoom;
-    @FindBy(how = How.XPATH, using = SPAN_AREA_XPATH)
-    private SelenideElement spanArea;
-    @FindBy(how = How.XPATH, using = SPAN_SLEEPERS_XPATH)
-    private SelenideElement spanSleepers;
-    @FindBy(how = How.XPATH, using = SPAN_BEDS_XPATH)
-    private SelenideElement spanBeds;
-    @FindBy(how = How.XPATH, using = SPAN_PRICE_PER_NIGHT_XPATH)
-    private SelenideElement spanPricePerNight;
-    @FindBy(how = How.XPATH, using = DROPDOWN_PRICE_XPATH)
-    private SelenideElement dropdownPrice;
-    @FindBy(how = How.XPATH, using = SPAN_PRICE_ALL_TIME_XPATH)
-    private SelenideElement spanPrice;
 
+    private final SelenideElement imgPhoto = $(By.xpath(IMG_PHOTO_XPATH));
+    private final SelenideElement fielderNameRoom =  $(By.xpath(FIELD_NAME_ROOM_XPATH));
+    private final SelenideElement spanArea = $(By.xpath(SPAN_AREA_XPATH));
+    private final SelenideElement spanSleepers= $(By.xpath(SPAN_SLEEPERS_XPATH));
+    private final SelenideElement spanBeds= $(By.xpath(SPAN_BEDS_XPATH));
+    private final SelenideElement spanPricePerNight= $(By.xpath(SPAN_PRICE_PER_NIGHT_XPATH));
+    private final SelenideElement dropdownPrice= $(By.xpath(DROPDOWN_PRICE_XPATH));
+    private final SelenideElement spanPrice = $(By.xpath(SPAN_PRICE_ALL_TIME_XPATH));
 
-    public boolean getIsFieldNameRoom() {
-        return imgPhoto.isDisplayed();
+    public RoomInformationPage waitForUpdateRoomInformationPage() {
+        Configuration.timeout = 10000;
+        return this;
     }
-
-    public RoomInformationPage enterTheSite(String locator) {
-        open(locator);
-        return new RoomInformationPage();
-    }
-
-    public void getFieldNameRoom() {
-        fielderNameRoom.getText();
-    }
-
-    public void getArea() {
-        spanArea.getText();
-    }
-
-
-    public void getNumberSleepers() {
-        spanSleepers.getText();
-    }
-
-    public void getNumberBeds() {
-        spanBeds.getText();
-    }
-
-    public SelenideElement getSpanPricePerNight() {
-        return spanPricePerNight;
-    }
-
     public SelenideElement getSpanPrice() {
         dropdownPrice.click();
         return spanPrice;

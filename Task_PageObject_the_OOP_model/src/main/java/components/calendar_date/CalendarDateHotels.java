@@ -11,7 +11,7 @@ import static constant.XPathCSS.*;
 
 public class CalendarDateHotels extends CalendarDate{
 
-    private final SelenideElement calendarButtonDone = $(By.xpath(HOTEL_PAGE_CALENDAR_BUTTON_DONE_XPATH));
+    private final SelenideElement calendarButtonDone;
 
     public CalendarDateHotels(SelenideElement buttonCalendar) {
         super.buttonCalendar = buttonCalendar;
@@ -21,7 +21,7 @@ public class CalendarDateHotels extends CalendarDate{
         super.textMonth = $(By.xpath(HOTEL_PAGE_TEXT_MONTH_XPATH));
         super.textDay = $(By.xpath(HOTEL_PAGE_TEXT_DAY_XPATH));
         super.textDayLocator = HOTEL_PAGE_TEXT_DAY_XPATH;
-
+        this.calendarButtonDone = $(By.xpath(HOTEL_PAGE_CALENDAR_BUTTON_DONE_XPATH));
     }
 
     @Override
@@ -32,11 +32,4 @@ public class CalendarDateHotels extends CalendarDate{
         findMonth(date);
         $(By.xpath(date)).click();
     }
-
-
-
-    public void clickCalendarButtonDone(){
-        calendarButtonDone.click();
-    }
-
 }

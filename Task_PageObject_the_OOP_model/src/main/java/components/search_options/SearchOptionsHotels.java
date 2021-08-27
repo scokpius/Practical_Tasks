@@ -13,6 +13,7 @@ public class SearchOptionsHotels extends SearchOptions {
         super.dateCheckIn = new CalendarDateHotels($(By.xpath(HOTEL_PAGE_BUTTON_CHECK_IN_XPATH)));
         super.dateCheckOut = new CalendarDateHotels($(By.xpath(HOTEL_PAGE_BUTTON_CHECK_OUT_XPATH)));
         super.buttonGuests = new GuestsHotels($(By.xpath(HOTEL_PAGE_BUTTON_GUESTS_XPATH)));
-        super.button = $(By.xpath(HOTEL_PAGE_BUTTON_FIND_XPATH));
+        super.buttonFindOfHotel = $(By.xpath(HOTEL_PAGE_BUTTON_FIND_XPATH));
     }
+
 }

@@ -1,3 +1,5 @@
+package object;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,14 +14,6 @@ public class Guest {
     public Guest(LocalDate dateOFBirth) {
         this.dateOFBirth = dateOFBirth;
     }
-
-//    public LocalDate getDateOFBirth() {
-//        return dateOFBirth;
-//    }
-//
-//    public void setDateOFBirth(LocalDate dateOFBirth) {
-//        this.dateOFBirth = dateOFBirth;
-//    }
 
     public int getAge(LocalDate date) {
         LocalDate dateNow = LocalDate.now();
