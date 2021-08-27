@@ -11,6 +11,7 @@
     <modules>
         <module>Task_Animate_the_OOP_model</module>
         <module>Task_PageObject_the_OOP_model</module>
+        <module>Task_Steps_OOP_and_PO_models</module>
     </modules>
 
     <properties>
@@ -40,12 +41,6 @@
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.12</version>
-        </dependency>
-        <dependency>
-            <groupId>com.codeborne</groupId>
-            <artifactId>selenide</artifactId>
-            <version>5.23.0</version>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
