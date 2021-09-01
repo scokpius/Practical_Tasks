@@ -7,10 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Task_Animate_the_OOP_model" />
+        <module name="Task_PageObject_the_OOP_model" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Task_PageObject_the_OOP_model" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
