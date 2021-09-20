@@ -2,14 +2,14 @@ package page;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import lombok.Getter;
+import lombok.Data;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
 import static constant.XPathCSS.*;
-@Getter
-public class RoomInformationPage {
 
+@Data
+public class RoomInformationPage {
 
     private final SelenideElement imgPhoto = $(By.xpath(IMG_PHOTO_XPATH));
     private final SelenideElement fielderNameRoom =  $(By.xpath(FIELD_NAME_ROOM_XPATH));

@@ -4,11 +4,9 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
+
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Builder
 public class HotelRoom {
     private String hotelRoomName;
     private Price price;
@@ -19,4 +17,6 @@ public class HotelRoom {
     public BigDecimal calculateCostForNumberDays(int days) {
         return getPrice().getSum().multiply(BigDecimal.valueOf(days));
     }
+
+
 }

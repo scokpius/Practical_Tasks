@@ -8,6 +8,7 @@ import page.ResultsSearchPage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static constant.URL.HOTWIRE;
 
@@ -15,7 +16,7 @@ public class ResultsTofSearchingSteps {
     static HomePage homePage = new HomePage();
     HotelsPage hotelsPage = new HotelsPage();
     ResultsSearchPage resultsSearchPage = new ResultsSearchPage();
-    List<Hotel> hotelsList = new ArrayList<>(10);
+    List<Hotel> hotelsList = new ArrayList<>();
 
     public List<Hotel> resultsOfSearchingWithHomePage(HotelSearch hotelSearch) {
         homePage.enterTheSite(HOTWIRE);
@@ -31,10 +32,11 @@ public class ResultsTofSearchingSteps {
         homePage.getFunctionMenu().getFormFindHome().getSearchOptions().clickButtonFindOfHotel();
         resultsSearchPage.waitForPageLoaded();
         resultsSearchPage.clickStandardRateHotels();
-        for (int i = 0; i < resultsSearchPage.getListNameHotel().size(); i++) {
-            hotelsList.get(i).setHotelName(resultsSearchPage.getListNameHotel().get(i).getText());
-        }
-        return hotelsList;
+        return resultsSearchPage.getListNameHotel()
+                .stream()
+                .map(selenideElement -> Hotel.builder().hotelName(selenideElement.getText()).build())
+                .collect(Collectors.toList());
+
     }
 
     public List<Hotel> resultsOfSearchingWithResultsSearchPage (HotelSearch hotelSearch) {
@@ -50,10 +52,11 @@ public class ResultsTofSearchingSteps {
         hotelsPage.getFormFindHotel().getSearchOptions().clickButtonFindOfHotel();
         resultsSearchPage.waitForPageLoaded();
         resultsSearchPage.clickStandardRateHotels();
-        for (int i = 0; i < resultsSearchPage.getListNameHotel().size(); i++) {
-            hotelsList.get(i).setHotelName(resultsSearchPage.getListNameHotel().get(i).getText());
-        }
-        return hotelsList;
+        return resultsSearchPage.getListNameHotel()
+                .stream()
+                .map(selenideElement -> Hotel.builder().hotelName(selenideElement.getText())
+                                                       .hotelLink(selenideElement.getAttribute("href")).build())
+                .collect(Collectors.toList());
     }
 
     public List<Hotel> changeOfSearchingOnHotelsPage(HotelSearch hotelSearch) {
@@ -66,10 +69,11 @@ public class ResultsTofSearchingSteps {
         resultsSearchPage.getSearchOptions().clickButtonFindOfHotel();
         resultsSearchPage.clickStandardRateHotels();
         resultsSearchPage.waitForPageLoaded();
-        for (int i = 0; i < resultsSearchPage.getListNameHotel().size(); i++) {
-            hotelsList.get(i).setHotelName(resultsSearchPage.getListNameHotel().get(i).getText());
-        }
-        return hotelsList;
+        return resultsSearchPage.getListNameHotel()
+                .stream()
+                .map(selenideElement -> Hotel.builder().hotelName(selenideElement.getText())
+                                                       .hotelLink(selenideElement.getAttribute("href")).build())
+                .collect(Collectors.toList());
     }
 
 }

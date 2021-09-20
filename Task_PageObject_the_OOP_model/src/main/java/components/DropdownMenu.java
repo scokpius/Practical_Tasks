@@ -1,13 +1,13 @@
 package components;
 
 import com.codeborne.selenide.Condition;
-import lombok.Getter;
+import lombok.Data;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
-@Getter
+@Data
 public class DropdownMenu {
 
     private final String buttonDropdown;

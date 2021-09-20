@@ -1,12 +1,11 @@
 package object;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
+@Data
 public class Currency {
     private String currencyName;
     private String code;
     private char symbol;
+
 }

@@ -1,18 +1,12 @@
 package object;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
-@Getter
-@Setter
+@Builder
+@Data
 public class Location {
     private String countryName;
     private String regionName;
     private String townName;
-
-    public Location(String countryName, String regionName, String townName) {
-        this.countryName = countryName;
-        this.regionName = regionName;
-        this.townName = townName;
-    }
 }

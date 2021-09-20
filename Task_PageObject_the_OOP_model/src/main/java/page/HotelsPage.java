@@ -3,9 +3,9 @@ package page;
 import com.codeborne.selenide.Configuration;
 import components.FormFindHotel;
 import components.Header;
-import lombok.Getter;
+import lombok.Data;
 
-@Getter
+@Data
 public class HotelsPage {
 
     private final Header header;
@@ -20,5 +20,9 @@ public class HotelsPage {
     public HotelsPage waitForUpdateHotelPage() {
         Configuration.timeout = 10000;
         return this;
+    }
+
+    public FormFindHotel getFormFindHotel() {
+        return formFindHotel;
     }
 }

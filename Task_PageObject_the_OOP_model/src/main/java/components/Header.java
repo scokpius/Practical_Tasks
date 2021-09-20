@@ -1,6 +1,6 @@
 package components;
 
-import lombok.Getter;
+import lombok.Data;
 import org.openqa.selenium.By;
 import page.DialogCreateAccount;
 import page.DialogSingIn;
@@ -9,7 +9,7 @@ import page.HotelsPage;
 import static com.codeborne.selenide.Selenide.$;
 import static constant.XPathCSS.*;
 
-@Getter
+@Data
 public class Header {
 
     private final DialogSingIn dialogSingIn;
@@ -49,4 +49,6 @@ public class Header {
         menu.getButtonMenu().click();
         return new HotelsPage();
     }
+
+
 }

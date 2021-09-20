@@ -7,16 +7,23 @@ import page.ResultsSearchPage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ViewHotelInformationStep {
 
     ResultsSearchPage resultsSearchPage = new ResultsSearchPage();
     HotelInformationPage hotelInformationPage = new HotelInformationPage();
-    Hotel hotel;
     List<HotelRoom> listHotelRoom = new ArrayList<>();
     List<String> listPhotoRoom = new ArrayList<>();
 
     public Hotel viewHotelInformation(List<Hotel> listHotel){
+
+    resultsSearchPage.getListNameHotel()
+                .stream()
+                .map(selenideElement -> Hotel.builder().hotelName(selenideElement.getText())
+                        .hotelLink(selenideElement.getAttribute("href")).build())
+                .collect(Collectors.toList());
+
         for (int i = 0; i < resultsSearchPage.getListNameHotel().size(); i++) {
             if (listHotel.get(i).getHotelName().equals(resultsSearchPage.getListNameHotel().get(i).getText())){
                 resultsSearchPage.getListLinkHotel().get(i).click();
@@ -32,8 +39,6 @@ public class ViewHotelInformationStep {
         for (int i = 0; i < listHotelRoom.size(); i++) {
             listPhotoRoom.set(i, hotelInformationPage.getImgListPhotos().get(i).getAttribute("scr"));
         }
-        hotel = new Hotel(hotelInformationPage.getFieldNameHotel().getText(),listHotelRoom, listPhotoRoom,
-                hotelInformationPage.getInputLocation().getText());
-        return hotel;
+        return Hotel.builder().build();
     }
 }

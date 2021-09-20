@@ -1,13 +1,11 @@
 package object;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.time.LocalDate;
 import java.time.Period;
 
-@Getter
-@Setter
+@Data
 public class Guest {
     private LocalDate dateOFBirth;
 
@@ -24,4 +22,5 @@ public class Guest {
     public boolean isAdultGuest(int age) {
         return age > 17;
     }
+
 }

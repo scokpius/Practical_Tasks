@@ -5,7 +5,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import components.search_options.SearchOptions;
 import components.search_options.SearchOptionsResultsSearchPage;
-import lombok.Getter;
+import lombok.Data;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static constant.XPathCSS.*;
-@Getter
+@Data
 public class ResultsSearchPage {
 
     private final List<SelenideElement> listNameHotel = $$(By.xpath(SELECT_LIST_NAME_HOTEL_RESULT_SEARCH_XPATH));

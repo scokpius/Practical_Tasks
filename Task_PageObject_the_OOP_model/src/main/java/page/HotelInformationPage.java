@@ -2,7 +2,7 @@ package page;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
-import lombok.Getter;
+import lombok.Data;
 import org.openqa.selenium.By;
 
 import java.util.List;
@@ -11,9 +11,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static constant.XPathCSS.*;
 
-@Getter
+@Data
 public class HotelInformationPage {
-
 
     private final List<SelenideElement>  imgListPhotos = $$(By.xpath(IMG_LIST_PHOTOS_XPATH));
     private final SelenideElement fieldNameHotel = $(By.xpath(FIELD_NAME_HOTEL_XPATH));

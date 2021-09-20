@@ -62,7 +62,7 @@ public class XPathCSS {
     public static final String RESULTS_PAGE_BUTTON_GUESTS_XPATH = HOME_PAGE_BUTTON_GUESTS_XPATH;
     public static final String RESULTS_PAGE_BUTTON_SEARCH_XPATH = HOME_PAGE_BUTTON_FIND_XPATH;
     public static final String SELECT_LIST_NAME_HOTEL_RESULT_SEARCH_XPATH = "//*[@class=\"HotelCardLayout__hotel-name\"]/span";
-    public static final String SELECT_LIST_LINK_HOTEL_RESULT_SEARCH_XPATH = "//*[@class=\"result-list-components\"]";
+    public static final String SELECT_LIST_LINK_HOTEL_RESULT_SEARCH_XPATH = "//*[@class=\"result-list-components\"]//a";
     public static final String BUTTON_STANDARD_RATE_HOTELS_XPATH = "//*[@class=\"SegmentedControllerCard\"][@value=\"RETAIL\"]";
     public  static final String BUTTON_CONTINUE_XPATH = "//*[@class=\"btn btn-primary\"]";
     //HotelInformation
