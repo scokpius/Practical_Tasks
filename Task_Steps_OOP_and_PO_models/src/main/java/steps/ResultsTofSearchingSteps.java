@@ -6,7 +6,6 @@ import page.HomePage;
 import page.HotelsPage;
 import page.ResultsSearchPage;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,18 +15,17 @@ public class ResultsTofSearchingSteps {
     static HomePage homePage = new HomePage();
     HotelsPage hotelsPage = new HotelsPage();
     ResultsSearchPage resultsSearchPage = new ResultsSearchPage();
-    List<Hotel> hotelsList = new ArrayList<>();
 
     public List<Hotel> resultsOfSearchingWithHomePage(HotelSearch hotelSearch) {
         homePage.enterTheSite(HOTWIRE);
         homePage.chooseHotelsTabClick(hotelSearch.getLocation().getTownName());
-        homePage.getFunctionMenu().getFormFindHome().getInputLocation().setValue(hotelSearch.getLocation().getTownName()).pressEnter();
-        homePage.waitForPageLoaded();
+        homePage.getFunctionMenu().getFormFindHome().getInputLocation().setValue(hotelSearch.getLocation().getTownName());
+        homePage.getFunctionMenu().getFormFindHome().getDropdownLocationClick(hotelSearch.getLocation().getTownName()).click();
         homePage.getFunctionMenu().getFormFindHome().getSearchOptions().chooseCheckInDate(hotelSearch.getArriveDate());
         homePage.getFunctionMenu().getFormFindHome().getSearchOptions().chooseCheckOutDate(hotelSearch.getDepartureDate());
         homePage.waitForPageLoaded();
         homePage.getFunctionMenu().getFormFindHome().getSearchOptions().chooseGuests(hotelSearch.getRooms(),
-                hotelSearch.getRooms(), hotelSearch.getChildren());
+                hotelSearch.getAdults(), hotelSearch.getChildren());
         homePage.waitForPageLoaded();
         homePage.getFunctionMenu().getFormFindHome().getSearchOptions().clickButtonFindOfHotel();
         resultsSearchPage.waitForPageLoaded();
@@ -36,7 +34,6 @@ public class ResultsTofSearchingSteps {
                 .stream()
                 .map(selenideElement -> Hotel.builder().hotelName(selenideElement.getText()).build())
                 .collect(Collectors.toList());
-
     }
 
     public List<Hotel> resultsOfSearchingWithResultsSearchPage (HotelSearch hotelSearch) {
@@ -76,4 +73,16 @@ public class ResultsTofSearchingSteps {
                 .collect(Collectors.toList());
     }
 
+    public boolean resultOfSearching(HotelSearch hotelSearch) {
+        boolean verify = true;
+        homePage.enterTheSite(HOTWIRE);
+        homePage.chooseHotelsTabClick(hotelSearch.getLocation().getTownName());
+        homePage.getFunctionMenu().getFormFindHome().getInputLocation().setValue(hotelSearch.getLocation().getTownName());
+        for (int i = 0; i < homePage.getFunctionMenu().getFormFindHome().getDropdownLocationText().size(); i++) {
+           if (!homePage.getFunctionMenu().getFormFindHome().getDropdownLocation().get(i).getText().equals(hotelSearch.getLocation().getTownName())) {
+               verify = false;
+            }
+        }
+        return verify;
+    }
 }

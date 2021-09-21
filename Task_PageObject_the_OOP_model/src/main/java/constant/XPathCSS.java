@@ -35,6 +35,8 @@ public class XPathCSS {
     public static final String HOME_PAGE_TEXT_AMOUNT_ADULT_XPATH = " //*[@id=\"farefinder-occupant-selector-hotel-adults\"]";
     public static final String HOME_PAGE_TEXT_AMOUNT_CHILDREN_XPATH = "//*[@id=\"farefinder-occupant-selector-hotel-children\"]";
     public static final String HOME_PAGE_BUTTON_DONE_XPATH = "//*[@class=\"btn btn-primary btn-sm\"]";
+    public static final String HOME_PAGE_DROPDOWN_LOCATION_CSS = ".dropdown-menu li";
+    public static final String HOME_PAGE_DROPDOWN_TEXT_CSS = ".dropdown-menu b";
     //HotelsPage
     public static final String HOTEL_PAGE = "//*[@class=\"WizardRegionHotwire--Background \"]";
     public static final String HOTEL_PAGE_INPUT_LOCATION_XPATH = "//*[@id=\"location-field-destination-menu\"]/div[1]/button";
@@ -65,6 +67,8 @@ public class XPathCSS {
     public static final String SELECT_LIST_LINK_HOTEL_RESULT_SEARCH_XPATH = "//*[@class=\"result-list-components\"]//a";
     public static final String BUTTON_STANDARD_RATE_HOTELS_XPATH = "//*[@class=\"SegmentedControllerCard\"][@value=\"RETAIL\"]";
     public  static final String BUTTON_CONTINUE_XPATH = "//*[@class=\"btn btn-primary\"]";
+    public  static final String RESULTS_PAGE_ERROR = "//*[text()='We’re sorry, but we are experiencing system difficulties and are temporarily unable to complete your search']";
+
     //HotelInformation
     public static final String IMG_LIST_PHOTOS_XPATH = "//*[@id=\"Overview\"]//*[@class=\"uitk-image-media\"]";
     public static final String FIELD_NAME_HOTEL_XPATH = "//*[@class=\"uitk-heading-3\"  and @aria-hidden=\"true\"]";

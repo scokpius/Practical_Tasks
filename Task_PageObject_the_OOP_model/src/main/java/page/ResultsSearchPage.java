@@ -1,13 +1,14 @@
 package page;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import components.search_options.SearchOptions;
 import components.search_options.SearchOptionsResultsSearchPage;
 import lombok.Data;
 import org.openqa.selenium.By;
 
+import java.time.Duration;
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -24,6 +25,7 @@ public class ResultsSearchPage {
     private final SearchOptions searchOptions= new SearchOptionsResultsSearchPage();
 
     public ResultsSearchPage clickStandardRateHotels() {
+
         waitDisableElement(SELECT_LIST_LINK_HOTEL_RESULT_SEARCH_XPATH);
         buttonStandardRateHotels.click();
         return this;
@@ -39,11 +41,16 @@ public class ResultsSearchPage {
     }
 
     public ResultsSearchPage waitForPageLoaded() {
-        Configuration.timeout = 30000;
-        return this;
+        Selenide.Wait().withTimeout(Duration.ofSeconds(10));
+        return  this;
     }
 
     public void waitDisableElement(String locator) {
         $(By.xpath(locator)).shouldBe(Condition.exist);
     }
+
+    public void waitEnableElement() {
+         buttonStandardRateHotels.shouldBe(Condition.appear);
+    }
+
 }
