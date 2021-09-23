@@ -18,6 +18,12 @@ public class ResultsTofSearchingSteps {
     ResultsSearchPage resultsSearchPage = new ResultsSearchPage();
     List<Hotel> hotelsList = new ArrayList<>();
 
+    /**
+     * This method searches for hotels by the specified parameters on the home page navigates
+     * to the search results page and returns a list of found hotels from it.
+     * @param hotelSearch contain search parameters
+     * @return returns a list of hotels received after search
+     */
     public List<Hotel> resultsOfSearchingWithHomePage(HotelSearch hotelSearch) {
         homePage.enterTheSite(HOTWIRE);
         homePage.chooseHotelsTabClick(hotelSearch.getLocation().getTownName());
@@ -36,9 +42,14 @@ public class ResultsTofSearchingSteps {
                 .stream()
                 .map(selenideElement -> Hotel.builder().hotelName(selenideElement.getText()).build())
                 .collect(Collectors.toList());
-
     }
 
+    /**
+     * This method searches for hotels by the specified parameters on the hotel page navigates
+     * to the search results page and returns a list of found hotels from it.
+     * @param hotelSearch contain search parameters
+     * @return returns a list of hotels received after search
+     */
     public List<Hotel> resultsOfSearchingWithResultsSearchPage (HotelSearch hotelSearch) {
         homePage.enterTheSite(HOTWIRE);
         homePage.goToHotelPage();
@@ -59,6 +70,12 @@ public class ResultsTofSearchingSteps {
                 .collect(Collectors.toList());
     }
 
+    /**
+     * This method changes the parameters of the original hotel search on the results page
+     * and returns a new list of hotels from that page.
+     * @param hotelSearch contain search parameters
+     * @return returns a list of hotels received after search
+     */
     public List<Hotel> changeOfSearchingOnHotelsPage(HotelSearch hotelSearch) {
         resultsSearchPage.waitForPageLoaded();
         resultsSearchPage.getInputLocation().setValue(hotelSearch.getLocation().getTownName()).pressEnter();

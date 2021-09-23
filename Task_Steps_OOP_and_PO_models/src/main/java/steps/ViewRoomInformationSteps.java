@@ -8,19 +8,26 @@ import page.RoomInformationPage;
 public class ViewRoomInformationSteps {
     HotelInformationPage hotelInformationPage = new HotelInformationPage();
     RoomInformationPage roomInformationPage = new RoomInformationPage();
-    HotelRoom hotelRoom;
 
+    /**
+     * This method searches for the selected room from the list of available rooms
+     * in the selected hotel and goes to the page to view information about it.
+     * @param hotel information about hotel
+     * @return returns information about the selected room
+     */
+    public HotelRoom viewRoomInformation(Hotel hotel, String roomName){
 
-    public HotelRoom viewRoomInformation(Hotel hotel){
-        hotelInformationPage.waitForUpdateHotelInformationPage();
-        for (int i = 0; i < hotelInformationPage.getListNameRooms().size(); i++) {
-            if (hotel.getListRooms().get(i).getHotelRoomName().equals(hotelInformationPage.getListNameRooms().get(i).getText())){
+        for (int i = 0; i < hotel.getListRooms().size(); i++) {
+            if (roomName.equals(hotel.getListRooms().get(i).getHotelRoomName())){
                 hotelInformationPage.selectRoom(i);
                 break;
             }
         }
         roomInformationPage.waitForUpdateRoomInformationPage();
-        return hotelRoom;
+        return HotelRoom.builder()
+                .hotelRoomName(roomInformationPage.getFielderNameRoom().getText())
+                .areaRoom(roomInformationPage.getSpanArea().getText())
+                .build();
     }
 
 }
