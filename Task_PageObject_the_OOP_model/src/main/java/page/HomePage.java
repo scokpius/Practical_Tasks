@@ -57,7 +57,7 @@ public class HomePage {
     }
 
     public HotelsPage goToHotelPage() {
-            header.clickButtonHotelsMenu();
+        header.clickButtonHotelsMenu();
         return new HotelsPage();
     }
 

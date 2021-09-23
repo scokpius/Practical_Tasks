@@ -22,6 +22,7 @@ public class ResultsSearchPage {
     private final SelenideElement buttonStandardRateHotels = $(By.xpath(BUTTON_STANDARD_RATE_HOTELS_XPATH));
     private final SelenideElement buttonContinue = $(By.xpath(BUTTON_CONTINUE_XPATH));
     private final SelenideElement inputLocation  = $(By.xpath(RESULTS_PAGE_INPUT_LOCATION_XPATH));
+    private List<SelenideElement> dropdownLocation;
     private final SearchOptions searchOptions= new SearchOptionsResultsSearchPage();
 
     public ResultsSearchPage clickStandardRateHotels() {
@@ -29,6 +30,11 @@ public class ResultsSearchPage {
         waitDisableElement(SELECT_LIST_LINK_HOTEL_RESULT_SEARCH_XPATH);
         buttonStandardRateHotels.click();
         return this;
+    }
+
+    public SelenideElement getDropdownLocationClick(String townName) {
+        dropdownLocation = $$(String.format(RESULTS_PAGE_DROPDOWN_LOCATION_CSS, townName));
+        return dropdownLocation.get(0);
     }
 
     public RoomInformationPage clickButtonContinue() {

@@ -1,37 +1,40 @@
 
-import object.HotelSearch;
-import object.Location;
 import org.junit.Test;
 import steps.ResultsTofSearchingSteps;
-
-import java.time.LocalDate;
 
 import static org.junit.Assert.assertTrue;
 
 public class SearchRequestTest extends BaseTest{
     private ResultsTofSearchingSteps resultsTofSearchingSteps = new ResultsTofSearchingSteps();
-    private HotelSearch hotelSearchParis;
 
+    /**
+     * Test Case ES-1: Creating a search query at HomePage
+     * https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit?usp=sharing
+     */
     @Test
     public void createSearchQueryAtHomePage(){
-        hotelSearchParis = HotelSearch.builder()
-                .location(Location.builder().townName("Paris").build())
-                .arriveDate(LocalDate.of(2021, 9, 27))
-                .departureDate(LocalDate.of(2021, 10, 4))
-                .rooms("1")
-                .adults("4")
-                .children("0")
-                .build();
-        assertTrue(resultsTofSearchingSteps.resultsOfSearchingWithHomePage(hotelSearchParis).size()>0);
+        assertTrue(resultsTofSearchingSteps.resultsOfSearchingWithHomePage(
+                InputParametersForTests.hotelSearchParis).size()>0);
     }
 
+    /**
+     * Test Case ES-11: Check the dropdown menu for input information
+     * https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit?usp=sharing
+     */
     @Test
     public void checkTheDropdownMenuForInputInformation(){
-        hotelSearchParis = HotelSearch.builder()
-                .location(Location.builder().townName("Par").build())
-                .build();
-        assertTrue(resultsTofSearchingSteps.resultOfSearching(hotelSearchParis)==true);
+        assertTrue(resultsTofSearchingSteps.resultOfSearching(InputParametersForTests.hotelSearchPar)==true);
 
+    }
+
+    /**
+     * Test Case ES-2: Creating a search query at HotelsPage
+     * https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit?usp=sharing
+     */
+    @Test
+    public void creatingSearchQueryAtHotelsPage(){
+        assertTrue(resultsTofSearchingSteps.resultsOfSearchingWithResultsSearchPage(
+                InputParametersForTests.hotelSearchParis).size()>0);
     }
 
 }

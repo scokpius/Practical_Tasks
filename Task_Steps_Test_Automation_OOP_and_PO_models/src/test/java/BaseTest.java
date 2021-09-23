@@ -19,7 +19,6 @@ public class BaseTest {
         Configuration.timeout = 15000;
         Configuration.holdBrowserOpen = true;
         Configuration.headless = false;
-       // initPages();
     }
 
 

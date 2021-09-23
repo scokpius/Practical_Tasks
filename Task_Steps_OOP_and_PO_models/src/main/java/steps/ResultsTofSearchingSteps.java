@@ -39,7 +39,9 @@ public class ResultsTofSearchingSteps {
     public List<Hotel> resultsOfSearchingWithResultsSearchPage (HotelSearch hotelSearch) {
         homePage.enterTheSite(HOTWIRE);
         homePage.goToHotelPage();
-        hotelsPage.getFormFindHotel().getInputLocation().setValue(hotelSearch.getLocation().getTownName()).pressEnter();
+        hotelsPage.getFormFindHotel().clickButtonLocation();
+        hotelsPage.getFormFindHotel().getInputLocation().setValue(hotelSearch.getLocation().getTownName());
+        hotelsPage.getFormFindHotel().getDropdownLocationClick(hotelSearch.getLocation().getTownName()).click();
         hotelsPage.waitForUpdateHotelPage();
         hotelsPage.getFormFindHotel().getSearchOptions().chooseCheckInDate(hotelSearch.getArriveDate());
         hotelsPage.getFormFindHotel().getSearchOptions().chooseCheckOutDate(hotelSearch.getDepartureDate());
@@ -58,7 +60,8 @@ public class ResultsTofSearchingSteps {
 
     public List<Hotel> changeOfSearchingOnHotelsPage(HotelSearch hotelSearch) {
         resultsSearchPage.waitForPageLoaded();
-        resultsSearchPage.getInputLocation().setValue(hotelSearch.getLocation().getTownName()).pressEnter();
+        resultsSearchPage.getInputLocation().setValue(hotelSearch.getLocation().getTownName());
+        resultsSearchPage.getDropdownLocationClick(hotelSearch.getLocation().getTownName()).click();
         resultsSearchPage.getSearchOptions().chooseCheckInDate(hotelSearch.getArriveDate());
         resultsSearchPage.getSearchOptions().chooseCheckOutDate(hotelSearch.getDepartureDate());
         resultsSearchPage.getSearchOptions().chooseGuests(hotelSearch.getRooms(),
