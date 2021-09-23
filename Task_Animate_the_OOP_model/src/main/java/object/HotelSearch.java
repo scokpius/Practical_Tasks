@@ -41,7 +41,7 @@ public class HotelSearch {
         int countAdults = 0;
         int countChildren = 0;
         for (int i = 0; i < this.getGuests().size(); i++) {
-            if (guests.get(i).getGuests().get(i).isAdultGuest(guests.get(i).getGuests().get(i).getAge(guests.get(i).getGuests().get(i).getDateOFBirth()))) {
+            if (guests.get(i).getGuests().get(i).isAdultGuest(guests.get(i).getGuests().get(i).getAge())) {
                 countAdults++;
             } else {
                 countChildren++;
