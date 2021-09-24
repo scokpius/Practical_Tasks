@@ -69,7 +69,8 @@ public class XPathCSS {
     public static final String IMG_LIST_PHOTOS_XPATH = "//*[@id=\"Overview\"]//*[@class=\"uitk-image-media\"]";
     public static final String FIELD_NAME_HOTEL_XPATH = "//*[@class=\"uitk-heading-3\"  and @aria-hidden=\"true\"]";
     public static final String INPUT_LOCATION_XPATH = "//*[contains(@class, 'uitk-layout-grid-item-columnspan-large-1')]//*[@class=\"uitk-heading-5\"]";
-    public static final String SELECT_LIST_NAME_ROOMS_XPATH = "//*[@class=\"uitk-heading-6\"]";
+    public static final String BUTTON_ROOMS_XPATH = "//*[contains(text(), 'Rooms')]/ancestor::li";
+    public static final String SELECT_LIST_NAME_ROOMS_CSS = ".uitk-spacing-padding-small-blockend-half  h3";
     public static final String LINK_MORE_DETAILS_XPATH = "//*[@data-stid=\"section-roomtype\"]/button";
     public static final String HOTEL_INFORMATION_PAGE_BUTTON_CHECK_IN_XPATH = "//*[@id=\"hotels-check-in-btn\"]";
     public static final String HOTEL_INFORMATION_PAGE_BUTTON_CHECK_OUT_XPATH = "//*[@id=\"hotels-check-out-btn\"]";

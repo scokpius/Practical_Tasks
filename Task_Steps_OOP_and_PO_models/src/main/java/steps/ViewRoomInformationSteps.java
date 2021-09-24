@@ -1,24 +1,23 @@
 package steps;
 
-import object.Hotel;
 import object.HotelRoom;
 import page.HotelInformationPage;
 import page.RoomInformationPage;
 
 public class ViewRoomInformationSteps {
-    HotelInformationPage hotelInformationPage = new HotelInformationPage();
-    RoomInformationPage roomInformationPage = new RoomInformationPage();
+    private HotelInformationPage hotelInformationPage = new HotelInformationPage();
+    private RoomInformationPage roomInformationPage = new RoomInformationPage();
 
     /**
      * This method searches for the selected room from the list of available rooms
      * in the selected hotel and goes to the page to view information about it.
-     * @param hotel information about hotel
+     * @param roomName name of rooms for choose one
      * @return returns information about the selected room
      */
-    public HotelRoom viewRoomInformation(Hotel hotel, String roomName){
+    public HotelRoom viewRoomInformation(String roomName){
 
-        for (int i = 0; i < hotel.getListRooms().size(); i++) {
-            if (roomName.equals(hotel.getListRooms().get(i).getHotelRoomName())){
+        for (int i = 0; i < hotelInformationPage.getListNameRooms().size(); i++) {
+            if (roomName.equals(hotelInformationPage.getListNameRooms().get(i).getText())){
                 hotelInformationPage.selectRoom(i);
                 break;
             }

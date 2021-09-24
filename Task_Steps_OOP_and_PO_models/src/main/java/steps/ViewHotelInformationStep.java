@@ -10,32 +10,37 @@ import java.util.List;
 
 public class ViewHotelInformationStep {
 
-    ResultsSearchPage resultsSearchPage = new ResultsSearchPage();
-    HotelInformationPage hotelInformationPage = new HotelInformationPage();
-    List<HotelRoom> listHotelRoom = new ArrayList<>();
-    List<String> listPhotoHotel= new ArrayList<>();
+    private ResultsSearchPage resultsSearchPage = new ResultsSearchPage();
+    private HotelInformationPage hotelInformationPage = new HotelInformationPage();
+    private List<HotelRoom> listHotelRoom = new ArrayList<>();;
+    private List<String> listPhotoHotel;
 
     /**
      * This method searches for the selected hotel from the list of available hotels
      * and goes to the page to view information about it.
-     * @param listHotel list of hotels to choose one
+     * @param hotelName name of hotels for choose one
      * @return returns information about the selected hotel
      */
-    public Hotel viewHotelInformation(List<Hotel> listHotel, String hotelName){
-        for (int i = 0; i < listHotel.size(); i++) {
-            if (hotelName.equals(listHotel.get(i).getHotelName())){
+    public Hotel viewHotelInformation(String hotelName){
+        for (int i = 0; i < resultsSearchPage.getListLinkHotel().size(); i++) {
+            if (hotelName.equals(resultsSearchPage.getListLinkHotel().get(i).getText())){
                 resultsSearchPage.getListLinkHotel().get(i).click();
                 break;
             }
         }
         hotelInformationPage.waitForUpdateHotelInformationPage();
-        listHotelRoom = new ArrayList<>(hotelInformationPage.getListNameRooms().size());
-        for (int i = 0; i < listHotelRoom.size(); i++) {
-            listHotelRoom.get(i).setHotelRoomName(hotelInformationPage.getListNameRooms().get(i).getText());
+        hotelInformationPage.getButtonRooms().click();
+        for (int i = 0; i < hotelInformationPage.getListNameRooms().size(); i++) {
+            listHotelRoom.add(i,
+                    HotelRoom.builder()
+                    .hotelRoomName(hotelInformationPage.getListNameRooms().get(i).getText())
+                    .build());
+
         }
-        listPhotoHotel = new ArrayList<>(hotelInformationPage.getImgListPhotos().size());
-        for (int i = 0; i < listHotelRoom.size(); i++) {
-            listPhotoHotel.set(i, hotelInformationPage.getImgListPhotos().get(i).getAttribute("scr"));
+        listPhotoHotel = new ArrayList<>();
+        for (int i = 0; i < hotelInformationPage.getImgListPhotos().size(); i++) {
+            System.out.println(hotelInformationPage.getImgListPhotos().get(i).getAttribute("scr"));
+            listPhotoHotel.add(i, hotelInformationPage.getImgListPhotos().get(i).getAttribute("scr"));
         }
         return Hotel.builder()
                 .hotelName(hotelInformationPage.getFieldNameHotel().getText())
