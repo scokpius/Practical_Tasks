@@ -71,6 +71,7 @@ public class XPathCSS {
     public static final String INPUT_LOCATION_XPATH = "//*[contains(@class, 'uitk-layout-grid-item-columnspan-large-1')]//*[@class=\"uitk-heading-5\"]";
     public static final String BUTTON_ROOMS_XPATH = "//*[contains(text(), 'Rooms')]/ancestor::li";
     public static final String SELECT_LIST_NAME_ROOMS_CSS = ".uitk-spacing-padding-small-blockend-half  h3";
+    public static final String LIST_CLASS_HOTEL_XPATH = "//*[@class=\"uitk-rating\"]/*[@xmlns=\"http://www.w3.org/2000/svg\"]";
     public static final String LINK_MORE_DETAILS_XPATH = "//*[@data-stid=\"section-roomtype\"]/button";
     public static final String HOTEL_INFORMATION_PAGE_BUTTON_CHECK_IN_XPATH = "//*[@id=\"hotels-check-in-btn\"]";
     public static final String HOTEL_INFORMATION_PAGE_BUTTON_CHECK_OUT_XPATH = "//*[@id=\"hotels-check-out-btn\"]";
@@ -84,7 +85,7 @@ public class XPathCSS {
     public static final String HOTEL_INFORMATION_PAGE_BUTTON_ADD_MIN_XPATH = "//*[@class = \"uitk-flex uitk-flex-item uitk-step-input-controls\"]/button";
     public static final String HOTEL_INFORMATION_PAGE_BUTTON_DONE_XPATH = "//*[@class=\"btn btn-primary btn-sm\"]";
     //RoomInformation
-    public static final String IMG_PHOTO_XPATH = " //*[@data-testid=\"uitk-gallery-item-current-trigger\"]";
+    public static final String IMG_PHOTO_XPATH = "//*[@class=\"uitk-image-placeholder\"]/img";
     public static final String FIELD_NAME_ROOM_XPATH = "//*[@data-stid=\"property-offers-details-dialog-header\"]/h3";
     public static final String SPAN_AREA_XPATH = "//*[@class=\"all-t-padding-half\"][1]]/span";
     public static final String SPAN_SLEEPERS_XPATH = "//*[@class=\"all-t-padding-half\"][2]/span";

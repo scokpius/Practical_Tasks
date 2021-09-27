@@ -13,5 +13,6 @@ public class Hotel {
     private List<String> photoHotel;
     private String location;
     private String hotelLink;
+    private int classHotel;
 
 }

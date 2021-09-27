@@ -23,9 +23,12 @@ public class ViewRoomInformationSteps {
             }
         }
         roomInformationPage.waitForUpdateRoomInformationPage();
+
         return HotelRoom.builder()
                 .hotelRoomName(roomInformationPage.getFielderNameRoom().getText())
+                .photoRoom(roomInformationPage.getImgPhoto().getAttribute("src"))
                 .areaRoom(roomInformationPage.getSpanArea().getText())
+                .numberOfPeopleSleep(roomInformationPage.getSpanSleepers().getText())
                 .build();
     }
 

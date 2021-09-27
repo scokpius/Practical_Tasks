@@ -18,12 +18,9 @@ public class HotelInformationPage {
     private final SelenideElement fieldNameHotel = $(By.xpath(FIELD_NAME_HOTEL_XPATH));
     private final SelenideElement inputLocation = $(By.xpath(INPUT_LOCATION_XPATH));
     private final SelenideElement buttonRooms = $(By.xpath(BUTTON_ROOMS_XPATH));
+    private final List<SelenideElement> listClassHotel = $$(By.xpath(LIST_CLASS_HOTEL_XPATH));
     private final List<SelenideElement> listNameRooms = $$(SELECT_LIST_NAME_ROOMS_CSS);
     private final List<SelenideElement> linkMoreDetails = $$(By.xpath(LINK_MORE_DETAILS_XPATH));
-
-    public boolean getIsPhotos() {
-        return imgListPhotos.get(0).isDisplayed();
-    }
 
     public RoomInformationPage selectRoom(int index) {
         linkMoreDetails.get(index).click();
@@ -33,6 +30,10 @@ public class HotelInformationPage {
     public HotelInformationPage waitForUpdateHotelInformationPage() {
         Configuration.timeout = 10000;
         return this;
+    }
+
+    public void clickButtonRooms(){
+        buttonRooms.click();
     }
 
 }

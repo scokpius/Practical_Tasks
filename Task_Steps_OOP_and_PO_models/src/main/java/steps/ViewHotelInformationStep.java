@@ -12,8 +12,8 @@ public class ViewHotelInformationStep {
 
     private ResultsSearchPage resultsSearchPage = new ResultsSearchPage();
     private HotelInformationPage hotelInformationPage = new HotelInformationPage();
-    private List<HotelRoom> listHotelRoom = new ArrayList<>();;
-    private List<String> listPhotoHotel;
+    private List<HotelRoom> listHotelRoom = new ArrayList<>();
+    private List<String> listPhotoHotel = new ArrayList<>();
 
     /**
      * This method searches for the selected hotel from the list of available hotels
@@ -29,23 +29,23 @@ public class ViewHotelInformationStep {
             }
         }
         hotelInformationPage.waitForUpdateHotelInformationPage();
-        hotelInformationPage.getButtonRooms().click();
+        hotelInformationPage.clickButtonRooms();
         for (int i = 0; i < hotelInformationPage.getListNameRooms().size(); i++) {
             listHotelRoom.add(i,
                     HotelRoom.builder()
-                    .hotelRoomName(hotelInformationPage.getListNameRooms().get(i).getText())
-                    .build());
-
+                            .hotelRoomName(hotelInformationPage.getListNameRooms().get(i).getText())
+                            .build());
         }
         listPhotoHotel = new ArrayList<>();
         for (int i = 0; i < hotelInformationPage.getImgListPhotos().size(); i++) {
-            System.out.println(hotelInformationPage.getImgListPhotos().get(i).getAttribute("scr"));
-            listPhotoHotel.add(i, hotelInformationPage.getImgListPhotos().get(i).getAttribute("scr"));
-        }
-        return Hotel.builder()
+            System.out.println(hotelInformationPage.getImgListPhotos().get(i).getAttribute("src"));
+            listPhotoHotel.add(i, hotelInformationPage.getImgListPhotos().get(i).getAttribute("src"));
+        }return Hotel.builder()
                 .hotelName(hotelInformationPage.getFieldNameHotel().getText())
                 .listRooms(listHotelRoom)
                 .photoHotel(listPhotoHotel)
+                .location(hotelInformationPage.getInputLocation().getText())
+                .classHotel(hotelInformationPage.getListClassHotel().size())
                 .build();
     }
 }
