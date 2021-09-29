@@ -1,10 +1,10 @@
 package object;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
-@Getter
-@Setter
+@Builder
+@Data
 public class User {
     private final String firstName;
     private final String lastName;

@@ -5,7 +5,7 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import components.FunctionMenu;
 import components.Header;
-import lombok.Getter;
+import lombok.Data;
 import org.apache.commons.lang3.time.DateUtils;
 import org.openqa.selenium.Cookie;
 
@@ -16,11 +16,11 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static constant.XPathCSS.*;
 
-@Getter
+@Data
 public class HomePage {
 
-    public Header header;
-    private final FunctionMenu functionMenu;
+    private Header header;
+    private FunctionMenu functionMenu;
 
     public HomePage() {
         header = new Header();
@@ -83,4 +83,7 @@ public class HomePage {
     }
 
 
+    public FunctionMenu getFunctionMenu() {
+        return functionMenu;
+    }
 }

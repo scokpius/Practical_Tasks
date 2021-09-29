@@ -1,22 +1,18 @@
 package object;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
 import java.util.List;
 
-@Setter
-@Getter
+@Builder
+@Data
 public class Hotel {
     private String hotelName;
     private List<HotelRoom> listRooms;
     private List<String> photoHotel;
     private String location;
+    private String hotelLink;
+    private int classHotel;
 
-    public Hotel(String hotelName, List<HotelRoom> listRooms, List<String> photoHotel, String location) {
-        this.hotelName = hotelName;
-        this.listRooms = listRooms;
-        this.photoHotel = photoHotel;
-        this.location = location;
-    }
 }

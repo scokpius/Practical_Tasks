@@ -2,6 +2,7 @@ package page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
+import lombok.Data;
 import org.openqa.selenium.By;
 
 import java.time.Duration;
@@ -9,6 +10,7 @@ import java.time.Duration;
 import static com.codeborne.selenide.Selenide.$;
 import static constant.XPathCSS.*;
 
+@Data
 public class DialogCreateAccount extends DialogSingIn {
 
     private final SelenideElement inputFirstName = $(INPUT_FIRST_NAME_CSS);

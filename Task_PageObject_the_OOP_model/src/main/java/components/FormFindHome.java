@@ -3,13 +3,13 @@ package components;
 import com.codeborne.selenide.SelenideElement;
 import components.search_options.SearchOptions;
 import components.search_options.SearchOptionsHome;
-import lombok.Getter;
+import lombok.Data;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.$;
-import static constant.XPathCSS.*;
+import static constant.XPathCSS.HOME_PAGE_INPUT_LOCATION_XPATH;
 
-@Getter
+@Data
 public class FormFindHome {
 
     private final SelenideElement inputLocation = $(By.xpath(HOME_PAGE_INPUT_LOCATION_XPATH));

@@ -2,7 +2,7 @@ package page;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import lombok.Getter;
+import lombok.Data;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -10,7 +10,7 @@ import java.time.Duration;
 
 import static constant.XPathCSS.*;
 
-@Getter
+@Data
 public class DialogSingIn {
 
     @FindBy(how = How.CSS, using = INPUT_EMAIL_CSS)

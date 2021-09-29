@@ -1,13 +1,13 @@
 package object;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Builder;
+import lombok.Data;
 
 import java.time.LocalDate;
 import java.util.List;
 
-@Getter
-@Setter
+@Builder
+@Data
 public class HotelSearch {
     private Location location;
     private LocalDate arriveDate;
@@ -50,4 +50,7 @@ public class HotelSearch {
         this.adults = String.valueOf(countAdults);
         this.children = String.valueOf(countChildren);
     }
+
+
+
 }
