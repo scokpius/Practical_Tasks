@@ -1,6 +1,6 @@
 import com.codeborne.selenide.Configuration;
-import org.junit.After;
-import org.junit.Before;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -8,8 +8,8 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
 public class BaseTest {
-    @Before
-    public void setUp(){
+    @BeforeAll
+    public static void setUp(){
         Configuration.browser = "chrome";
         ChromeOptions options = new ChromeOptions();
         options.addArguments("incognito");
@@ -22,8 +22,8 @@ public class BaseTest {
     }
 
 
-    @After
-    public void closeBrowser(){
+    @AfterAll
+    public static void closeBrowser(){
         getWebDriver().quit();
     }
 }

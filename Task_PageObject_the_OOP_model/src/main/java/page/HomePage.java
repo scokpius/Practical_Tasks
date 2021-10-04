@@ -12,8 +12,7 @@ import org.openqa.selenium.Cookie;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static constant.XPathCSS.*;
 
 @Data
@@ -51,6 +50,7 @@ public class HomePage {
     public void createAccount(String firstName, String lastName, String email, String password) {
         header.clickSingUp(HOME_PAGE_BUTTON_SING_IN_XPATH, firstName, lastName, email, password);
     }
+
 
     public void chooseCurrency(String currency) {
         header.chooseElement(String.format(BUTTON_CURRENCY_SEARCH_ELEMENTS_XPATH, currency), header.getDropdownCurrency());

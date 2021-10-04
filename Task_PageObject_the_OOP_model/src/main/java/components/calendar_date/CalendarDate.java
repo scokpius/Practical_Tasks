@@ -7,23 +7,24 @@ import java.time.LocalDate;
 import java.util.Locale;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 
 
 public abstract class CalendarDate {
-    protected SelenideElement buttonCalendar;
-    protected SelenideElement dropdownCalendar;
-    protected SelenideElement buttonPrev;
-    protected SelenideElement buttonNext;
-    protected SelenideElement textMonth;
-    protected SelenideElement textDay;
-    protected String textDayLocator;
+    SelenideElement buttonCalendar;
+    SelenideElement dropdownCalendar;
+    SelenideElement buttonPrev;
+    SelenideElement buttonNext;
+    SelenideElement textMonth;
+    SelenideElement textDay;
+    String textDayLocator;
 
 
     public void clickButtonCalendar(){
         buttonCalendar.click();
     }
 
-    public void findMonth(String dateXpath) {
+    void findMonth(String dateXpath) {
         while (true) {
             if ($(By.xpath(dateXpath)).exists()) {
                 break;
@@ -38,6 +39,6 @@ public abstract class CalendarDate {
         String date = String.format(textDayLocator, month +" "+localDate.getDayOfMonth()+", " + localDate.getYear());
         buttonCalendar.click();
         findMonth(date);
-        $(By.xpath(date)).click();
+        $x(date).click();
     }
 }

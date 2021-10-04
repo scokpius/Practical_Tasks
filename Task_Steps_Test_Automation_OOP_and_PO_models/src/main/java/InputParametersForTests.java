@@ -1,35 +1,41 @@
+import object.Guests;
 import object.HotelSearch;
-import object.Location;
 
 import java.time.LocalDate;
 
 class InputParametersForTests {
     final static HotelSearch hotelSearchParis =
             HotelSearch.builder()
-            .location(Location.builder().townName("Paris").build())
-            .arriveDate(LocalDate.of(2021, 9, 27))
-            .departureDate(LocalDate.of(2021, 10, 4))
-            .rooms("1")
-            .adults("4")
-            .children("0")
-            .build();
-
-    final static HotelSearch hotelSearchPar =
-            HotelSearch.builder()
-                    .location(Location.builder().townName("Par").build())
+                    .location("Paris")
+                    .arriveDate(LocalDate.of(2021, 10, 19))
+                    .departureDate(LocalDate.of(2021, 10, 24))
+                    .guests(Guests.builder()
+                            .rooms("1")
+                            .adults("4")
+                            .children("0")
+                            .build())
                     .build();
-
-    final static HotelSearch hotelSearchMinsk = HotelSearch.builder()
-            .location(Location.builder().townName("Minsk").build())
-            .arriveDate(LocalDate.of(2021, 9, 27))
-            .departureDate(LocalDate.of(2021, 10, 4))
-            .rooms("1")
-            .adults("2")
-            .children("2")
-            .build();
 
     final static HotelSearch hotelSearchLondon =
             HotelSearch.builder()
-                    .location(Location.builder().townName("London").build())
+                    .location("London")
+                    .arriveDate(LocalDate.of(2021, 10, 19))
+                    .departureDate(LocalDate.of(2021, 10, 24))
+                    .guests(Guests.builder()
+                            .rooms("1")
+                            .adults("2")
+                            .children("2")
+                            .build())
                     .build();
+
+    final static HotelSearch hotelSearchMinsk = HotelSearch.builder()
+            .location("Minsk")
+            .arriveDate(LocalDate.of(2021, 10, 27))
+            .departureDate(LocalDate.of(2021, 11, 4))
+            .guests(Guests.builder()
+                    .rooms("1")
+                    .adults("2")
+                    .children("2")
+                    .build())
+            .build();
 }

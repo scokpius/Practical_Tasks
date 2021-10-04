@@ -14,13 +14,14 @@ import java.util.concurrent.TimeUnit;
 
 public abstract class SearchOptions {
 
-    protected CalendarDate dateCheckIn;
-    protected CalendarDate dateCheckOut;
-    protected Guests buttonGuests;
-    protected SelenideElement buttonFindOfHotel;
+    CalendarDate dateCheckIn;
+    CalendarDate dateCheckOut;
+    Guests buttonGuests;
+    SelenideElement buttonFindOfHotel;
 
     public void chooseCheckInDate(LocalDate localDate) {
         dateCheckIn.selectDate(localDate);
+
     }
 
     public void chooseCheckOutDate(LocalDate localDate) {
@@ -49,8 +50,6 @@ public abstract class SearchOptions {
                         "7RJAAjLPfbBjMMz0G7MCLetfNs3vR5oQRwNdcJT0RyaqVBP8TS",
                 ".hotwire.com", "/", DateUtils.addHours(new Date(), 2)));
         WebDriverRunner.getWebDriver().manage().timeouts().pageLoadTimeout(10000,
-                TimeUnit.MILLISECONDS);
-        WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(15000,
                 TimeUnit.MILLISECONDS);
         return resultsSearchPage;
     }

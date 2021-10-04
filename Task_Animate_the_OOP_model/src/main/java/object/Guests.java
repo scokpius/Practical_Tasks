@@ -3,16 +3,23 @@ package object;
 import lombok.Builder;
 import lombok.Data;
 
-import java.util.List;
-
 @Data
 @Builder
 public class Guests {
 
-    private List<Guest> guests;
+    private String rooms;
+    private String adults;
+    private String children;
 
-    public List<Guest> addGuest(Guest guest) {
-        this.guests.add(guest);
-        return this.guests;
+    @Override
+    public String toString() {
+        return rooms + " Room, " + adults + " Adults, " + children + " Children";
     }
+
+    //    private List<Guest> guests;
+//
+//    public List<Guest> addGuest(Guest guest) {
+//        this.guests.add(guest);
+//        return this.guests;
+//    }
 }

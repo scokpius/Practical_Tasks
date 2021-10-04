@@ -4,6 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Objects;
+
 @Setter
 @Getter
 public abstract class Guests {
@@ -26,19 +28,19 @@ public abstract class Guests {
     }
 
     public void setNumberOfRooms(String amountRoom) {
-        initialValue = Integer.parseInt(textAmountRooms.getValue());
+        initialValue = Integer.parseInt(Objects.requireNonNull(textAmountRooms.getValue()));
         totalValue = Integer.parseInt(amountRoom);
         setValue(buttonAddRoom, buttonMinRoom);
     }
 
     public void setNumberOfAdult(String amountAdult) {
-        initialValue = Integer.parseInt(textAmountAdult.getValue());
+        initialValue = Integer.parseInt(Objects.requireNonNull(textAmountAdult.getValue()));
         totalValue = Integer.parseInt(amountAdult);
         setValue(buttonAddAdult, buttonMinAdult);
     }
 
     public void setNumberOfAChildren(String amountChildren) {
-        initialValue = Integer.parseInt(textAmountChildren.getValue());
+        initialValue = Integer.parseInt(Objects.requireNonNull(textAmountChildren.getValue()));
         totalValue = Integer.parseInt(amountChildren);
         setValue(buttonAddChildren, buttonMinChildren);
     }
