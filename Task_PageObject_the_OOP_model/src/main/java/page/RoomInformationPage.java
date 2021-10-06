@@ -1,6 +1,5 @@
 package page;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Data;
 
@@ -19,12 +18,10 @@ public class RoomInformationPage {
     private final SelenideElement dropdownPrice= $x(DROPDOWN_PRICE_XPATH);
     private final SelenideElement spanPrice = $x(SPAN_PRICE_ALL_TIME_XPATH);
 
-    public RoomInformationPage waitForUpdateRoomInformationPage() {
-        Configuration.timeout = 10000;
-        return this;
-    }
     public SelenideElement getSpanPrice() {
         dropdownPrice.click();
         return spanPrice;
     }
+
+
 }

@@ -21,7 +21,6 @@ public class ResultsToSearchingSteps {
 
     /**
      * The method fills in the hotel search parameters on the home page
-     *
      * @param hotelSearch input parameters
      */
     public void fillInputFieldWithSearchParametersOnHomePage(HotelSearch hotelSearch) {
@@ -105,7 +104,6 @@ public class ResultsToSearchingSteps {
 
     /**
      * The method fills in the hotel search parameters on the hotel page
-     *
      * @param hotelSearch input parameters
      */
     public void enterSearchParametersOnHotelPage(HotelSearch hotelSearch) {
@@ -155,6 +153,10 @@ public class ResultsToSearchingSteps {
         resultsSearchPage.waitForPageLoaded();
     }
 
+    /**
+     * The method fills in the hotel search parameters on the results page
+     * @param location input parameters
+     */
     public void enterSearchParametersOnResultsPage(String location) {
         resultsSearchPage.waitForPageLoaded();
         resultsSearchPage.getInputLocation().click();
@@ -166,7 +168,7 @@ public class ResultsToSearchingSteps {
         resultsSearchPage.clickStandardRateHotels();
     }
     /**
-     *
+     * The method navigates to the search hotel information page
      */
     public void goToHotelInformationPages(String hotelName) {
         resultsSearchPage.selectHotel(hotelName);

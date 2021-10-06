@@ -89,6 +89,7 @@ public class XPathCSS {
     public static final String FIELD_NAME_HOTEL_XPATH = "//*[@class=\"uitk-heading-3\"  and @aria-hidden=\"true\"]";
     public static final String FIELD_LOCATION_XPATH = "//*[contains(@class, 'uitk-layout-grid-item-columnspan-large-1')]//*[@class=\"uitk-heading-5\"]";
     public static final String TAB_LOCATION_XPATH = "//*[@href=\"#Location\"]";
+    public static final String TAB_ROOM_XPATH = "//*[@href=\"#Offers\"]";
     public static final String SELECT_LIST_NAME_ROOMS_XPATH = "//*[@class=\"uitk-heading-6\"]";
     public static final String LINK_MORE_DETAILS_XPATH = "//*[@data-stid=\"section-roomtype\"]/button";
     public static final String HOTEL_INFORMATION_PAGE_BUTTON_CHECK_IN_XPATH = "//*[@id=\"hotels-check-in-btn\"]";
@@ -106,7 +107,7 @@ public class XPathCSS {
     //RoomInformation
     public static final String IMG_PHOTO_XPATH = " //*[@data-testid=\"uitk-gallery-item-current-trigger\"]";
     public static final String FIELD_NAME_ROOM_XPATH = "//*[@data-stid=\"property-offers-details-dialog-header\"]/h3";
-    public static final String SPAN_AREA_XPATH = "//*[@class=\"all-t-padding-half\"][1]]/span";
+    public static final String SPAN_AREA_XPATH = "//*[@class=\"all-t-padding-half\"][1]/span";
     public static final String SPAN_SLEEPERS_XPATH = "//*[@class=\"all-t-padding-half\"][2]/span";
     public static final String SPAN_BEDS_XPATH = "//*[@class=\"all-t-padding-half\"][3]/span";
     public static final String SPAN_PRICE_PER_NIGHT_XPATH = "//*[@class=\"uitk-price-lockup right-align\"]//*[@class=\"uitk-lockup-price\"]";

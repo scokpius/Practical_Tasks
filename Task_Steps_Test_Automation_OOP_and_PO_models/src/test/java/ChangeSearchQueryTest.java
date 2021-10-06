@@ -1,3 +1,4 @@
+import io.qameta.allure.Link;
 import object.Hotel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -10,13 +11,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
 class ChangeSearchQueryTest extends BaseTest {
-    private ResultsToSearchingSteps resultsSearchPage = new ResultsToSearchingSteps();
+    private ResultsToSearchingSteps resultsSteps = new ResultsToSearchingSteps();
     private List<Hotel> hotelsResultFirst;
 
     @BeforeEach
     void createSearchQuery() {
-        resultsSearchPage.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTests.hotelSearchParis);
-        hotelsResultFirst = resultsSearchPage.getHotelsListFromResultsPage();
+        resultsSteps.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTests.hotelSearchParis);
+        hotelsResultFirst = resultsSteps.getHotelsListFromResultsPage();
     }
 
     /**
@@ -25,10 +26,12 @@ class ChangeSearchQueryTest extends BaseTest {
      */
     @Test
     @DisplayName(value = "Test Case ES-3: Change search query in ResultsPage")
+    @Link(value = "",
+            url = "")
     void changeSearchQueryInResultsPage() {
         String location = "London";
-        resultsSearchPage.enterSearchParametersOnResultsPage(location);
-        List<Hotel> hotelsResultSecond = resultsSearchPage.getHotelsListFromResultsPage();
+        resultsSteps.enterSearchParametersOnResultsPage(location);
+        List<Hotel> hotelsResultSecond = resultsSteps.getHotelsListFromResultsPage();
         assertTrue(ComponentsForTest.compareTwoLists(hotelsResultFirst, hotelsResultSecond));
     }
 
