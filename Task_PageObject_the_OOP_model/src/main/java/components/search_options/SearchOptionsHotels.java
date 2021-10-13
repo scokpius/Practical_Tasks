@@ -18,8 +18,6 @@ public class SearchOptionsHotels extends SearchOptions {
     @Override
     public void chooseGuests(String amountRoom, String amountAdult, String amountChildren) {
         buttonGuests.clickButtonGuests();
-      //  buttonGuests.clickButtonGuests();
-       // buttonGuests.setNumberOfRooms(amountRoom);
         buttonGuests.setNumberOfAdult(amountAdult);
         buttonGuests.setNumberOfAChildren(amountChildren);
         buttonGuests.clickButtonDone();

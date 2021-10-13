@@ -1,10 +1,13 @@
 import io.qameta.allure.Link;
+import object.Hotel;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import steps.ResultsToSearchingSteps;
 import steps.ViewHotelInformationStep;
 import steps.ViewRoomInformationSteps;
+
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -47,13 +50,15 @@ class ViewInformationTest extends BaseTest {
     @Link (value = "Test Case ES-7: Check the room rate for one night",
             url = "https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit#heading=h.h4doq3u42cry")
     void checkTheRoomRateForOneNight() {
-        String hotelName = "London Marriott Hotel County Hall";
-        String roomName = "Deluxe Room, 2 Double Beds, Non Smoking";
+        String hotelName = "Park Plaza County Hall London";
+        String roomName = "Penthouse, 1 Bedroom (Suite)";
+        List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
+        System.out.println(actualList);
         resultsSteps.goToHotelInformationPages(hotelName);
         viewHotelSteps.goToRoomInformationPages(roomName);
         System.out.println(viewRoomSteps.getInformationRoomFromRoomInformationPage());
-     //   String actualPrice = viewHotelSteps.getHotelLocationFromHotelInformationPage();
-     //   assertEquals(actualLocation, InputParametersForTests.hotelSearchLondon.getLocation());
+        String actualPrice = viewHotelSteps.getHotelLocationFromHotelInformationPage();
+        assertEquals(actualPrice, InputParametersForTests.hotelSearchLondon.getLocation());
     }
 
     @Test
@@ -65,7 +70,7 @@ class ViewInformationTest extends BaseTest {
         String roomName = "Penthouse, 1 Bedroom (Suite)";
         resultsSteps.goToHotelInformationPages(hotelName);
         viewHotelSteps.goToRoomInformationPages(roomName);
-                String actualPrice = viewHotelSteps.getHotelLocationFromHotelInformationPage();
-      //  assertEquals(actualLocation, InputParametersForTests.hotelSearchLondon.getLocation());
+        String actualPrice = viewHotelSteps.getHotelLocationFromHotelInformationPage();
+        assertEquals(actualPrice, InputParametersForTests.hotelSearchLondon.getLocation());
     }
 }

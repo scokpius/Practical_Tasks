@@ -15,10 +15,10 @@ public class GuestsHotels extends Guests {
         super.textAmountChildren = $x(HOTEL_PAGE_TEXT_AMOUNT_CHILDREN_XPATH);
         super.buttonAddRoom = $x(HOTEL_PAGE_BUTTON_ADD_ROOM_XPATH);
         super.buttonMinRoom = $x(HOTEL_PAGE_BUTTON_MIN_ROOM_XPATH);
-        super.buttonAddAdult = $$x(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(0);
-        super.buttonMinAdult = $$x(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(1);
-        super.buttonAddChildren = $$x(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(2);
-        super.buttonMinChildren = $$x(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(3);
+        super.buttonAddAdult = $$x(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(1);
+        super.buttonMinAdult = $$x(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(0);
+        super.buttonAddChildren = $$x(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(3);
+        super.buttonMinChildren = $$x(HOTEL_PAGE_BUTTON_ADD_MIN_XPATH).get(2);
         super.buttonDone = $x(HOTEL_PAGE_BUTTON_DONE_XPATH);
     }
 

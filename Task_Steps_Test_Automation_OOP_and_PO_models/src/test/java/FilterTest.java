@@ -26,7 +26,6 @@ class FilterTest extends BaseTest {
     void sortedHotelsByPrice() {
         resultsSteps.selectSortByFilter();
         List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
-
         assertTrue(ComponentsForTest.isCheckSortingOfListByCost(actualList));
     }
 
@@ -38,8 +37,7 @@ class FilterTest extends BaseTest {
         String classHotel = "4-stars";
         resultsSteps.selectionHotelClassFilter(classHotel);
         List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
-
         assertTrue(ComponentsForTest.isCheckSortingOfListByClass(actualList) &&
-                ComponentsForTest.isCheckClassHotel(actualList, classHotel));
+                ComponentsForTest.isCheckFirstItemFromListForHotelClass(actualList, classHotel));
     }
 }

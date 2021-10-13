@@ -15,11 +15,4 @@ public class Guests {
     public String toString() {
         return rooms + " Room, " + adults + " Adults, " + children + " Children";
     }
-
-    //    private List<Guest> guests;
-//
-//    public List<Guest> addGuest(Guest guest) {
-//        this.guests.add(guest);
-//        return this.guests;
-//    }
 }

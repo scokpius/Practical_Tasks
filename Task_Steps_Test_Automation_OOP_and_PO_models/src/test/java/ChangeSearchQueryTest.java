@@ -32,7 +32,7 @@ class ChangeSearchQueryTest extends BaseTest {
         String location = "London";
         resultsSteps.enterSearchParametersOnResultsPage(location);
         List<Hotel> hotelsResultSecond = resultsSteps.getHotelsListFromResultsPage();
-        assertTrue(ComponentsForTest.compareTwoLists(hotelsResultFirst, hotelsResultSecond));
+        assertTrue(ComponentsForTest.isCompareListWithModifiedParametersWithOriginalList(hotelsResultFirst, hotelsResultSecond));
     }
 
 }

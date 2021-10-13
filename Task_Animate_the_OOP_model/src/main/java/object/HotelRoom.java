@@ -1,8 +1,7 @@
 package object;
 
-import lombok.*;
-
-import java.math.BigDecimal;
+import lombok.Builder;
+import lombok.Data;
 
 
 @Data
@@ -13,10 +12,4 @@ public class HotelRoom {
     private String numberOfPeopleSleep;
     private String areaRoom;
     private String photoRoom;
-
-    public BigDecimal calculateCostForNumberDays(int days) {
-        return getPrice().getSum().multiply(BigDecimal.valueOf(days));
-    }
-
-
 }

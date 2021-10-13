@@ -56,7 +56,7 @@ public class XPathCSS {
     public static final String HOTEL_PAGE_TEXT_AMOUNT_ADULT_XPATH = "//*[@id=\"adult-input-0\"]";
     public static final String HOTEL_PAGE_TEXT_AMOUNT_CHILDREN_XPATH = "//*[@id=\"child-input-0\"]";
     public static final String HOTEL_PAGE_BUTTON_DONE_XPATH = "//*[@data-testid=\"guests-done-button\"]";
-    //ResultSearchPage        .uitk-step-input-controls button
+    //ResultSearchPage
     public static final String RESULTS_PAGE_INPUT_LOCATION_XPATH = HOME_PAGE_INPUT_LOCATION_XPATH;
     public static final String RESULTS_PAGE_INPUT_LOCATION_DELETE_XPATH = "//*[@data-id=\"SVG_HW_FUNCTIONAL_RESET\"]";
     public static final String RESULTS_PAGE_DROPDOWN_LOCATION_CSS = HOME_PAGE_DROPDOWN_LOCATION_CSS;

@@ -1,14 +1,14 @@
 package steps;
 
 
+import object.Currency;
 import page.HomePage;
-import object.*;
 
 import static constant.URL.HOTWIRE;
 
 public class CurrencyStep {
-    static HomePage homePage = new HomePage();
-    static Currency changeCurrency = new Currency();
+    private static HomePage homePage = new HomePage();
+    private static Currency changeCurrency = new Currency();
 
     /**
      * the method allows you to select any currency from the drop-down list

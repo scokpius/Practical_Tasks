@@ -44,6 +44,7 @@ public class ResultsToSearchingSteps {
         resultsSearchPage.waitForPageLoaded();
         resultsSearchPage.closeBlueToptill();
         resultsSearchPage.clickStandardRateHotels();
+        resultsSearchPage.waitForPageLoaded();
     }
 
     /**
@@ -59,7 +60,9 @@ public class ResultsToSearchingSteps {
                     .classHotel(resultsSearchPage.getClassHotel(i).size())
                     .pricePerNight(Price.builder()
                             .code(resultsSearchPage.getCodePricePerNight(i).getText())
-                            .sum(BigDecimal.valueOf(Double.parseDouble(resultsSearchPage.getSumPricePerNight(i).getText().replace("$", ""))))
+                            .sum(BigDecimal.valueOf(Double.parseDouble(
+                                    resultsSearchPage.getSumPricePerNight(i).getText().replace("$", "")
+                                            .replace(",", ""))))
                             .build())
                     .build());
         }

@@ -97,15 +97,13 @@ public class ResultsSearchPage {
     }
 
     public void selectHotel(String hotelName){
-        int i = 0;
-        while (i < listNameHotel.size()) {
+        for (int i = 0; i < listNameHotel.size(); i++) {
             if(listNameHotel.get(i).getText().equals(hotelName)) {
                 listLinkHotel.get(i).click();
-                linkHotel = listTextLinkHotel.get(i).getAttribute("href");
                 break;
             }
-            i++;
         }
+
     }
 
     public HotelInformationPage goToHotelInformationPage() {
