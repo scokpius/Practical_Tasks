@@ -5,9 +5,8 @@ import page.HotelInformationPage;
 public class ViewHotelInformationStep {
 
 
-    HotelInformationPage hotelInformationPage = new HotelInformationPage();
-//    List<HotelRoom> listHotelRoom = new ArrayList<>();
-//    List<String> listPhotoRoom = new ArrayList<>();
+    private HotelInformationPage hotelInformationPage = new HotelInformationPage();
+
 
     public String getHotelNameFromHotelInformationPage(){
         hotelInformationPage.waitForUpdateHotelInformationPage();

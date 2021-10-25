@@ -129,7 +129,7 @@ public class ResultsToSearchingSteps {
     public void goToResultsPagesFromHotelPage() {
         hotelsPage.getFormFindHotel().getSearchOptions().clickButtonFindOfHotel();
         resultsSearchPage.waitForPageLoaded();
-        resultsSearchPage.closeBlueToptill();
+     //   resultsSearchPage.closeBlueToptill();
         resultsSearchPage.clickStandardRateHotels();
     }
 

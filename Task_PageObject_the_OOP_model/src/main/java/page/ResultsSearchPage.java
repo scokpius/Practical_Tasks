@@ -107,10 +107,10 @@ public class ResultsSearchPage {
     }
 
     public HotelInformationPage goToHotelInformationPage() {
-        buttonContinue.click();
+     //   buttonContinue.click();
         switchTo().window(1);
         HotelInformationPage hotelInformationPage = new HotelInformationPage();
-        Selenide.sleep(20000);
+        Selenide.sleep(10000);
         WebDriverRunner.getWebDriver().manage().deleteCookieNamed("ak_bmsc");
         WebDriverRunner.getWebDriver().manage().addCookie(new Cookie("ak_bmsc",
                 "5949BB4D1CE164DBFF9FA3CE76ECB53C~000000000000000000000000000000~YAAQX/1zPmwO7PB6AQAAGMn" +
