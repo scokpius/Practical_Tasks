@@ -47,10 +47,15 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>commons-collections</groupId>
-                <artifactId>commons-collections</artifactId>
-                <version>3.2.2</version>
+                <groupId>org.seleniumhq.Selenium</groupId>
+                <artifactId>Selenium-chrome-driver</artifactId>
+                <version>2.50.0</version>
             </dependency>
+<!--            <dependency>-->
+<!--                <groupId>commons-collections</groupId>-->
+<!--                <artifactId>commons-collections</artifactId>-->
+<!--                <version>3.2.2</version>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>

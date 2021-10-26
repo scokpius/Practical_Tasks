@@ -2,3 +2,5 @@
 /*/target/*
 /.idea/*
 /.reports/*
+/.target/*
+/.allure/*
