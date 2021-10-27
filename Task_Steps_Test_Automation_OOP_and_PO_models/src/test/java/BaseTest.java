@@ -10,7 +10,12 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class BaseTest {
     @BeforeAll
     public static void setUp(){
+        Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "chrome";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        Configuration.browserCapabilities = capabilities;
+
         ChromeOptions options = new ChromeOptions();
         options.addArguments("incognito");
         Configuration.browserCapabilities = new DesiredCapabilities();
@@ -20,7 +25,6 @@ public class BaseTest {
         Configuration.holdBrowserOpen = true;
         Configuration.headless = false;
     }
-
 
     @AfterAll
     public static void closeBrowser(){
