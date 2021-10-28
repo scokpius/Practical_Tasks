@@ -10,8 +10,7 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 public class BaseTest {
     @BeforeAll
     public static void setUp(){
-       // Configuration.remote = "http://selenoid:4444/wd/hub";
-        Configuration.remote = "http://selenoid:4444";
+        Configuration.remote = "http://selenoid:4444/wd/hub";
         Configuration.browser = "chrome";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
