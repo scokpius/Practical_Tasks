@@ -7,8 +7,8 @@ class InputParametersForTests {
     final static HotelSearch hotelSearchParis =
             HotelSearch.builder()
                     .location("Paris")
-                    .arriveDate(LocalDate.of(2021, 10, 19))
-                    .departureDate(LocalDate.of(2021, 10, 24))
+                    .arriveDate(LocalDate.of(2021, 11, 19))
+                    .departureDate(LocalDate.of(2021, 11, 24))
                     .guests(Guests.builder()
                             .rooms("1")
                             .adults("4")
@@ -19,8 +19,8 @@ class InputParametersForTests {
     final static HotelSearch hotelSearchLondon =
             HotelSearch.builder()
                     .location("London")
-                    .arriveDate(LocalDate.of(2021, 10, 19))
-                    .departureDate(LocalDate.of(2021, 10, 24))
+                    .arriveDate(LocalDate.of(2021, 11, 19))
+                    .departureDate(LocalDate.of(2021, 11, 24))
                     .guests(Guests.builder()
                             .rooms("1")
                             .adults("2")
@@ -30,8 +30,8 @@ class InputParametersForTests {
 
     final static HotelSearch hotelSearchMinsk = HotelSearch.builder()
             .location("Minsk")
-            .arriveDate(LocalDate.of(2021, 10, 27))
-            .departureDate(LocalDate.of(2021, 11, 4))
+            .arriveDate(LocalDate.of(2021, 11, 27))
+            .departureDate(LocalDate.of(2021, 12, 4))
             .guests(Guests.builder()
                     .rooms("1")
                     .adults("2")
