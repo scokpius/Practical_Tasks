@@ -16,6 +16,17 @@ class InputParametersForTests {
                             .build())
                     .build();
 
+    final static HotelSearch hotelSearchMilan =
+            HotelSearch.builder()
+                    .location("Milan")
+                    .arriveDate(LocalDate.of(2021, 11, 19))
+                    .departureDate(LocalDate.of(2021, 11, 24))
+                    .guests(Guests.builder()
+                            .rooms("1")
+                            .adults("2")
+                            .children("2")
+                            .build())
+                    .build();
     final static HotelSearch hotelSearchLondon =
             HotelSearch.builder()
                     .location("London")

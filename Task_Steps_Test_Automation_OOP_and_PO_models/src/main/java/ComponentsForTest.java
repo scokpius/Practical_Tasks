@@ -32,8 +32,6 @@ class ComponentsForTest {
     }
 
     static boolean isCompareListWithModifiedParametersWithOriginalList(List<Hotel> hotelListOne, List<Hotel> hotelListSecond) {
-
-
         for (int i = 0; i < hotelListOne.size(); i++) {
             if (hotelListOne.contains(hotelListSecond)){
                 return false;

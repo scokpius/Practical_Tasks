@@ -42,7 +42,7 @@ public class ResultsToSearchingSteps {
     public void goToResultsPagesFromHomePage() {
         homePage.getFunctionMenu().getFormFindHome().getSearchOptions().clickButtonFindOfHotel();
         resultsSearchPage.waitForPageLoaded();
-        resultsSearchPage.closeBlueToptill();
+        resultsSearchPage.closeBlueTopTill();
         resultsSearchPage.clickStandardRateHotels();
         resultsSearchPage.waitForPageLoaded();
     }
@@ -120,7 +120,7 @@ public class ResultsToSearchingSteps {
         hotelsPage.getFormFindHotel().getSearchOptions().chooseCheckOutDate(hotelSearch.getDepartureDate());
         hotelsPage.waitForUpdateHotelPage();
         hotelsPage.getFormFindHotel().getSearchOptions().chooseGuests(hotelSearch.getGuests().getRooms(),
-                hotelSearch.getGuests().getRooms(), hotelSearch.getGuests().getChildren());
+                hotelSearch.getGuests().getAdults(), hotelSearch.getGuests().getChildren());
     }
 
     /**
@@ -129,7 +129,7 @@ public class ResultsToSearchingSteps {
     public void goToResultsPagesFromHotelPage() {
         hotelsPage.getFormFindHotel().getSearchOptions().clickButtonFindOfHotel();
         resultsSearchPage.waitForPageLoaded();
-     //   resultsSearchPage.closeBlueToptill();
+        resultsSearchPage.closeBlueTopTill();
         resultsSearchPage.clickStandardRateHotels();
     }
 

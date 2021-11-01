@@ -7,10 +7,11 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 
-public class BaseTest {
+public class  BaseTest {
     @BeforeAll
     public static void setUp(){
-       Configuration.remote = "http://selenoid:4444/wd/hub";
+   //
+        //    Configuration.remote = "http://selenoid:4444/wd/hub";
       //  Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "chrome";
         DesiredCapabilities capabilities = new DesiredCapabilities();

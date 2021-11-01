@@ -15,7 +15,7 @@ class FilterTest extends BaseTest {
 
     @BeforeEach
     void createSearchQuery() {
-        resultsSteps.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTests.hotelSearchParis);
+        resultsSteps.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTests.hotelSearchMilan);
         resultsSteps.goToResultsPagesFromHomePage();
     }
 

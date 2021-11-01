@@ -17,17 +17,14 @@ class ChangeSearchQueryTest extends BaseTest {
     @BeforeEach
     void createSearchQuery() {
         resultsSteps.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTests.hotelSearchParis);
+        resultsSteps.goToResultsPagesFromHomePage();
         hotelsResultFirst = resultsSteps.getHotelsListFromResultsPage();
     }
 
-    /**
-     * Test Case ES-3: Change search query in ResultsPage
-     * https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit?usp=sharing
-     */
     @Test
     @DisplayName(value = "Test Case ES-3: Change search query in ResultsPage")
-    @Link(value = "",
-            url = "")
+    @Link(value = "Test Case ES-3: Change search query in ResultsPage",
+            url = "https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit?usp=sharing")
     void changeSearchQueryInResultsPage() {
         String location = "London";
         resultsSteps.enterSearchParametersOnResultsPage(location);

@@ -51,15 +51,15 @@ public abstract class Guests {
 
     void setValue(SelenideElement buttonAdd, SelenideElement buttonMin) {
         if (initialValue < totalValue) {
-            while (totalValue - initialValue != 0){
+            while (totalValue - initialValue != 0) {
                 buttonAdd.click();
                 initialValue = initialValue + 1;
             }
         } else {
             if (initialValue > totalValue) {
-                while (initialValue - totalValue != 0){
+                while (initialValue - totalValue != 0) {
                     buttonMin.click();
-                    initialValue = initialValue- 1;
+                    initialValue = initialValue - 1;
                 }
             }
         }

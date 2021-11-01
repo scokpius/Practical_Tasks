@@ -42,7 +42,9 @@ class SearchRequestTest extends BaseTest {
         resultsSteps.enterSearchParametersOnHotelPage(InputParametersForTests.hotelSearchMinsk);
         resultsSteps.goToResultsPagesFromHotelPage();
         List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
-        assertTrue(actualList.size()>0);
+        boolean actualParameters = resultsSteps.isParametersOnResultsPageEqualsEnteredData(
+                InputParametersForTests.hotelSearchMinsk);
+        assertTrue(actualList.size() > 0);
     }
 
 

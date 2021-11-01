@@ -42,6 +42,7 @@ public class ResultsSearchPage {
     private final SelenideElement inputCheckIn = $(By.xpath(RESULTS_PAGE_BUTTON_CHECK_IN_XPATH));
     private final SelenideElement inputCheckOut = $(By.xpath(RESULTS_PAGE_BUTTON_CHECK_OUT_XPATH));
     private final SelenideElement inputGuest = $(By.xpath(RESULTS_PAGE_BUTTON_GUESTS_XPATH));
+    private final SelenideElement blueTopTill = $x("//*[@class=\"SVGIcon SVGIcon--16px SVGIcon--inline\"]");
 
     private List<SelenideElement> dropdownLocation;
     private final SearchOptions searchOptions = new SearchOptionsResultsSearchPage();
@@ -57,8 +58,10 @@ public class ResultsSearchPage {
         $x(RESULTS_PAGE_INPUT_LOCATION_DELETE_XPATH).click();
     }
 
-    public void closeBlueToptill() {
-        $x("//*[@class=\"SVGIcon SVGIcon--16px SVGIcon--inline\"]").click();
+    public void closeBlueTopTill() {
+        Selenide.Wait().withTimeout(Duration.ofSeconds(2));
+        waitDisableElement("//*[@class=\"SVGIcon SVGIcon--16px SVGIcon--inline\"]");
+        blueTopTill.click();
     }
 
     public SelenideElement getDropdownLocationClick(String townName) {
@@ -126,13 +129,12 @@ public class ResultsSearchPage {
         return hotelInformationPage;
     }
 
-    public ResultsSearchPage waitForPageLoaded() {
+    public void waitForPageLoaded() {
         Selenide.sleep(10000);
-        return this;
     }
 
-    public void waitDisableElement(String locator) {
-        Selenide.Wait().withTimeout(Duration.ofSeconds(20));
+    private void waitDisableElement(String locator) {
+        Selenide.Wait().withTimeout(Duration.ofSeconds(10));
         $x(locator).shouldBe(Condition.exist);
     }
 
