@@ -1,5 +1,6 @@
 import io.qameta.allure.Link;
 import object.Hotel;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,10 @@ class ViewInformationTest extends BaseTest {
         resultsSteps.goToResultsPagesFromHomePage();
     }
 
+    @AfterEach
+    void closeAll() {
+        closeBrowser();
+    }
 
     @Test
     @DisplayName(value = "Test Case ES-5: Check the name of the selected hotel")

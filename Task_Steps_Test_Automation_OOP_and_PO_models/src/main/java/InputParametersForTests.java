@@ -34,8 +34,8 @@ class InputParametersForTests {
                     .departureDate(LocalDate.of(2021, 11, 24))
                     .guests(Guests.builder()
                             .rooms("1")
-                            .adults("2")
-                            .children("2")
+                            .adults("2 ")
+                            .children("0")
                             .build())
                     .build();
 
