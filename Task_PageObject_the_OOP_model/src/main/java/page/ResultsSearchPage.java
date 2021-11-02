@@ -48,20 +48,24 @@ public class ResultsSearchPage {
     private final SearchOptions searchOptions = new SearchOptionsResultsSearchPage();
     private String linkHotel;
 
-    public ResultsSearchPage clickStandardRateHotels() {
+    public void clickStandardRateHotels() {
         waitDisableElement(BUTTON_STANDARD_RATE_HOTELS_XPATH);
         buttonStandardRateHotels.click();
-        return this;
     }
+
+//    public ResultsSearchPage clickStandardRateHotels() {
+//        waitDisableElement(BUTTON_STANDARD_RATE_HOTELS_XPATH);
+//        buttonStandardRateHotels.click();
+//        return this;
+//    }
 
     public void cleanInputLocation() {
         $x(RESULTS_PAGE_INPUT_LOCATION_DELETE_XPATH).click();
     }
 
     public void closeBlueTopTill() {
-        Selenide.Wait().withTimeout(Duration.ofSeconds(2));
-        waitDisableElement("//*[@class=\"SVGIcon SVGIcon--16px SVGIcon--inline\"]");
-        blueTopTill.click();
+     //   waitDisableElement("//*[@class=\"SVGIcon SVGIcon--16px SVGIcon--inline\"]");
+        if (blueTopTill.isDisplayed()) blueTopTill.click();
     }
 
     public SelenideElement getDropdownLocationClick(String townName) {

@@ -80,7 +80,7 @@ public class XPathCSS {
     public static final String SELECT_LIST_LINK_HOTEL_RESULT_SEARCH_XPATH = "//*[@class=\"result-card-container retail\"]";
     public static final String SELECT_LIST_LINK_TEXT_HOTEL_RESULT_SEARCH_XPATH = SELECT_LIST_LINK_HOTEL_RESULT_SEARCH_XPATH + "/a";
     public static final String SELECT_LIST_NAME_HOTEL_RESULT_SEARCH_XPATH = "//*[@class=\"HotelCardLayout__hotel-name\"]/span";
-    public static final String BUTTON_STANDARD_RATE_HOTELS_XPATH = "//*[@class=\"SegmentedControllerCard\"][@value=\"RETAIL\"]";
+    public static final String BUTTON_STANDARD_RATE_HOTELS_XPATH = "//*[text()='Standard rate hotels']/ancestor::div[@class=\"SegmentedControllerCard\"]";
     public static final String BUTTON_STANDARD_RATE_HOTELS_CSS = ".SegmentedControllerCard--Active";
     public static final String BUTTON_CONTINUE_XPATH = "//*[@class=\"btn btn-primary\"]";
 
