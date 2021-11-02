@@ -24,7 +24,7 @@ public class ResultsToSearchingSteps {
      * The method fills in the hotel search parameters on the home page
      * @param hotelSearch input parameters
      */
-    @Step()
+    @Step("The method fills in the hotel search parameters on the home page")
     public void fillInputFieldWithSearchParametersOnHomePage(HotelSearch hotelSearch) {
         homePage.enterTheSite(HOTWIRE);
         homePage.chooseHotelsTabClick(hotelSearch.getLocation());
@@ -41,7 +41,7 @@ public class ResultsToSearchingSteps {
     /**
      * The method navigates to the search results page
      */
-    @Step()
+    @Step("The method navigates to the search results page")
     public void goToResultsPagesFromHomePage() {
         homePage.getFunctionMenu().getFormFindHome().getSearchOptions().clickButtonFindOfHotel();
         resultsSearchPage.waitForPageLoaded();
@@ -55,7 +55,7 @@ public class ResultsToSearchingSteps {
      *
      * @return List<Hotel>
      */
-    @Step()
+    @Step("The method creates a list of hotels based on search results")
     public List<Hotel> getHotelsListFromResultsPage() {
         List<Hotel> listHotels = new ArrayList<>();
         for (int i = 1; i < resultsSearchPage.getListCardHotel().size(); i++) {
@@ -80,7 +80,7 @@ public class ResultsToSearchingSteps {
      * @param hotelSearch input parameters
      * @return returns true if values match or false if the values do not match
      */
-    @Step()
+    @Step("The method compares the values in the input fields of search parameters on the page of results and input parameters.")
     public boolean isParametersOnResultsPageEqualsEnteredData(HotelSearch hotelSearch) {
         return resultsSearchPage.getTextFromLocationField().contains(hotelSearch.getLocation()) &&
                 resultsSearchPage.getTextFromCheckInField().contains(hotelSearch.printLocalDate(hotelSearch.getArriveDate())) &&
@@ -95,7 +95,7 @@ public class ResultsToSearchingSteps {
      * @param location input parameters destination
      * @return returns true if values match or false if the values do not match
      */
-    @Step()
+    @Step("The method checks for the presence of the entered value of the input field in the drop-down menu.")
     public boolean isCheckEnteredValueInDropdownMenu(String location) {
         homePage.enterTheSite(HOTWIRE);
         homePage.chooseHotelsTabClick(location);
@@ -115,7 +115,7 @@ public class ResultsToSearchingSteps {
      * The method fills in the hotel search parameters on the hotel page
      * @param hotelSearch input parameters
      */
-    @Step()
+    @Step("The method fills in the hotel search parameters on the hotel page")
     public void enterSearchParametersOnHotelPage(HotelSearch hotelSearch) {
         homePage.enterTheSite(HOTWIRE);
         homePage.goToHotelPage();
@@ -133,7 +133,7 @@ public class ResultsToSearchingSteps {
     /**
      * The method navigates to the search results page
      */
-    @Step()
+    @Step("The method navigates to the search results page")
     public void goToResultsPagesFromHotelPage() {
         hotelsPage.getFormFindHotel().getSearchOptions().clickButtonFindOfHotel();
         resultsSearchPage.waitForPageLoaded();
@@ -144,7 +144,7 @@ public class ResultsToSearchingSteps {
     /**
      * The method navigates to the search results page
      */
-    @Step()
+    @Step("The method navigates to the search results page")
     public void selectSortByFilter() {
         resultsSearchPage.getFilterSortByButton().click();
         resultsSearchPage.getFilterSortByDropdown().get(1).click();
@@ -154,7 +154,7 @@ public class ResultsToSearchingSteps {
     /**
      * The method selects the hotel class from the drop-down menu
      */
-    @Step()
+    @Step("The method selects the hotel class from the drop-down menu")
     public void selectionHotelClassFilter(String classHotel) {
         resultsSearchPage.getFilterHotelClassButton().pressEnter();
         for (int i = 0; i < resultsSearchPage.getFilterHotelClassDropdown().size(); i++) {
@@ -170,7 +170,7 @@ public class ResultsToSearchingSteps {
      * The method fills in the hotel search parameters on the results page
      * @param location input parameters
      */
-    @Step()
+    @Step("The method fills in the hotel search parameters on the results page")
     public void enterSearchParametersOnResultsPage(String location) {
         resultsSearchPage.waitForPageLoaded();
         resultsSearchPage.getInputLocation().click();
@@ -184,7 +184,7 @@ public class ResultsToSearchingSteps {
     /**
      * The method navigates to the search hotel information page
      */
-    @Step()
+    @Step("The method navigates to the search hotel information page")
     public void goToHotelInformationPages(String hotelName) {
         resultsSearchPage.selectHotel(hotelName);
         resultsSearchPage.goToHotelInformationPage();
