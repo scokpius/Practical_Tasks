@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ViewInformation extends BaseTest {
+class ViewInformationSuite extends BaseTest {
     private ResultsToSearchingSteps resultsSteps = new ResultsToSearchingSteps();
     private ViewHotelInformationStep viewHotelSteps = new ViewHotelInformationStep();
     private ViewRoomInformationSteps viewRoomSteps = new ViewRoomInformationSteps();
@@ -58,7 +58,7 @@ class ViewInformation extends BaseTest {
         String hotelName = "Park Plaza County Hall London";
         String roomName = "Penthouse, 1 Bedroom (Suite)";
         List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
-        System.out.println(actualList);
+
         resultsSteps.goToHotelInformationPages(hotelName);
         viewHotelSteps.goToRoomInformationPages(roomName);
         System.out.println(viewRoomSteps.getInformationRoomFromRoomInformationPage());

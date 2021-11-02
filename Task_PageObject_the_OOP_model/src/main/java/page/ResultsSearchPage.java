@@ -53,18 +53,11 @@ public class ResultsSearchPage {
         buttonStandardRateHotels.click();
     }
 
-//    public ResultsSearchPage clickStandardRateHotels() {
-//        waitDisableElement(BUTTON_STANDARD_RATE_HOTELS_XPATH);
-//        buttonStandardRateHotels.click();
-//        return this;
-//    }
-
     public void cleanInputLocation() {
         $x(RESULTS_PAGE_INPUT_LOCATION_DELETE_XPATH).click();
     }
 
     public void closeBlueTopTill() {
-     //   waitDisableElement("//*[@class=\"SVGIcon SVGIcon--16px SVGIcon--inline\"]");
         if (blueTopTill.isDisplayed()) blueTopTill.click();
     }
 
