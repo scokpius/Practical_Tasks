@@ -19,6 +19,7 @@ class FilterTest extends BaseTest {
         resultsSteps.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTests.hotelSearchMilan);
         resultsSteps.goToResultsPagesFromHomePage();
     }
+
     @AfterEach
     void closeAll() {
         closeBrowser();

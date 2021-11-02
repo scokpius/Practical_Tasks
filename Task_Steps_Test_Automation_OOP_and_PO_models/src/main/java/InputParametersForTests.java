@@ -30,11 +30,11 @@ class InputParametersForTests {
     final static HotelSearch hotelSearchLondon =
             HotelSearch.builder()
                     .location("London")
-                    .arriveDate(LocalDate.of(2021, 11, 19))
-                    .departureDate(LocalDate.of(2021, 11, 24))
+                    .arriveDate(LocalDate.of(2021, 11, 25))
+                    .departureDate(LocalDate.of(2021, 11, 30))
                     .guests(Guests.builder()
                             .rooms("1")
-                            .adults("2 ")
+                            .adults("2")
                             .children("0")
                             .build())
                     .build();
