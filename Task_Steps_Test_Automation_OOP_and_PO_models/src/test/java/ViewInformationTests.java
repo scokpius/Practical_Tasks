@@ -12,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ViewInformationSuite extends BaseTest {
+class ViewInformationTests extends BaseTest {
     private ResultsToSearchingSteps resultsSteps = new ResultsToSearchingSteps();
     private ViewHotelInformationStep viewHotelSteps = new ViewHotelInformationStep();
     private ViewRoomInformationSteps viewRoomSteps = new ViewRoomInformationSteps();

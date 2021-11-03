@@ -9,6 +9,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+//@Epic("ChangeSearchQueryTest")
 class ChangeSearchQueryTest extends BaseTest {
     private ResultsToSearchingSteps resultsSteps = new ResultsToSearchingSteps();
     private List<Hotel> hotelsResultFirst;

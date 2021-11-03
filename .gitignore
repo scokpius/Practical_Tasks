@@ -1,6 +1,6 @@
-/.idea/
+/*/.idea/
 /*/target/*
-/.idea/*
-/.reports/*
-/.target/*
-/.allure/*
+/*/.idea/*
+/*/.reports/*
+/*/.target/*
+/*/.allure/*
