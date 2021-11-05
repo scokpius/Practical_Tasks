@@ -3,7 +3,7 @@ import object.HotelSearch;
 
 import java.time.LocalDate;
 
-class InputParametersForTests {
+class InputParametersForTest {
     final static HotelSearch hotelSearchParis =
             HotelSearch.builder()
                     .location("Paris")
@@ -27,6 +27,7 @@ class InputParametersForTests {
                             .children("2")
                             .build())
                     .build();
+
     final static HotelSearch hotelSearchLondon =
             HotelSearch.builder()
                     .location("London")

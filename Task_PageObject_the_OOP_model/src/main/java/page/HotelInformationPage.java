@@ -51,6 +51,23 @@ public class HotelInformationPage {
         return this;
     }
 
+    public List<SelenideElement> getListCardHotelRoom() {
+        return $$x(SELECT_LIST_CARD_ROOM_HOTEL_INFORMATION_PAGE_XPATH);
+    }
+    public SelenideElement getNameHotelRoom(int index) {
+        return $x(String.format(NAME_ROOM_HOTEL_INFORMATION_PAGE_XPATH, index));
+    }
+
+    public SelenideElement getAreaHotelRoom(int index) {
+        return $x(String.format(AREA_ROOM_HOTEL_INFORMATION_PAGE_XPATH, index));
+    }
+    public SelenideElement getNumberOfPeopleSleepHotelRoom(int index) {
+        return $x(String.format(NUMBER_OF_PEOPLE_SLEEP_ROOM_HOTEL_INFORMATION_PAGE_XPATH, index));
+    }
+    public SelenideElement getPricePerNightHotelRoom(int index) {
+        return $x(String.format(PRIZE_PER_NIGHT_ROOM_HOTEL_INFORMATION_PAGE_XPATH, index));
+    }
+
     public void clickLocationTab() {
         $x(TAB_LOCATION_XPATH).click();
     }

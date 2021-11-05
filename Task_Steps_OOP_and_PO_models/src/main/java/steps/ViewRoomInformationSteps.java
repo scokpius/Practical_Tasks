@@ -17,12 +17,13 @@ public class ViewRoomInformationSteps {
                 .numberOfPeopleSleep(roomInformationPage.getSpanSleepers().getText())
                 .price(Price.builder()
                         .code(roomInformationPage.getSpanPricePerNight().getText())
-                        .sum(BigDecimal.valueOf(Double.parseDouble(roomInformationPage.getSpanPricePerNight().getText().replace("$", ""))))
+                        .sum(BigDecimal.valueOf(Double.parseDouble(roomInformationPage.getSpanPricePerNight().getText()
+                                .replace("$", ""))))
                         .build())
                 .build();
     }
-
-
-
-
+    public BigDecimal getTotalPrice(){
+        return BigDecimal.valueOf(Double.parseDouble(roomInformationPage.getSpanPrice().getText().replace("$", "")
+                .replace(",", "")));
+    }
 }

@@ -16,7 +16,7 @@ class ChangeSearchQueryTest extends BaseTest {
 
     @BeforeEach
     void createSearchQuery() {
-        resultsSteps.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTests.hotelSearchParis);
+        resultsSteps.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTest.hotelSearchParis);
         resultsSteps.goToResultsPagesFromHomePage();
         hotelsResultFirst = resultsSteps.getHotelsListFromResultsPage();
     }

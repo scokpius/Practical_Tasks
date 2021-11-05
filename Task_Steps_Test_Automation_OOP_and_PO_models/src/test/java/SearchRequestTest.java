@@ -17,11 +17,11 @@ class SearchRequestTest extends BaseTest {
     @Link (value = "Test Case ES-1: Creating a search query at HomePage",
             url = "https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit#heading=h.5op9kdm6oa2n")
     void createSearchQueryAtHomePage() {
-        resultsSteps.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTests.hotelSearchParis);
+        resultsSteps.fillInputFieldWithSearchParametersOnHomePage(InputParametersForTest.hotelSearchParis);
         resultsSteps.goToResultsPagesFromHomePage();
         List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
         boolean actualParameters = resultsSteps.isParametersOnResultsPageEqualsEnteredData(
-                InputParametersForTests.hotelSearchParis);
+                InputParametersForTest.hotelSearchParis);
         assertTrue(actualList.size() > 0 && actualParameters);
     }
 
@@ -39,11 +39,11 @@ class SearchRequestTest extends BaseTest {
     @Link (value = "Test Case ES-2: Creating a search query at HotelsPage",
             url = "https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit#heading=h.iphgwosm2ehj")
     void creatingSearchQueryAtHotelsPage(){
-        resultsSteps.enterSearchParametersOnHotelPage(InputParametersForTests.hotelSearchMinsk);
+        resultsSteps.enterSearchParametersOnHotelPage(InputParametersForTest.hotelSearchMinsk);
         resultsSteps.goToResultsPagesFromHotelPage();
         List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
         boolean actualParameters = resultsSteps.isParametersOnResultsPageEqualsEnteredData(
-                InputParametersForTests.hotelSearchMinsk);
+                InputParametersForTest.hotelSearchMinsk);
         assertTrue(actualList.size() > 0);
     }
 

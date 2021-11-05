@@ -15,9 +15,9 @@ import java.util.List;
 import static constant.URL.HOTWIRE;
 
 public class ResultsToSearchingSteps {
-    private static HomePage homePage = new HomePage();
-    private HotelsPage hotelsPage = new HotelsPage();
-    private ResultsSearchPage resultsSearchPage = new ResultsSearchPage();
+    private static final HomePage homePage = new HomePage();
+    private final HotelsPage hotelsPage = new HotelsPage();
+    private final ResultsSearchPage resultsSearchPage = new ResultsSearchPage();
 
 
     /**
@@ -189,5 +189,4 @@ public class ResultsToSearchingSteps {
         resultsSearchPage.selectHotel(hotelName);
         resultsSearchPage.goToHotelInformationPage();
     }
-
 }

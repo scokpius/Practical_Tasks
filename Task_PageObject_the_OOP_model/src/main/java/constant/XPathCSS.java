@@ -90,6 +90,13 @@ public class XPathCSS {
     public static final String FIELD_LOCATION_XPATH = "//*[contains(@class, 'uitk-layout-grid-item-columnspan-large-1')]//*[@class=\"uitk-heading-5\"]";
     public static final String TAB_LOCATION_XPATH = "//*[@href=\"#Location\"]";
     public static final String TAB_ROOM_XPATH = "//*[@href=\"#Offers\"]";
+
+    public static final String SELECT_LIST_CARD_ROOM_HOTEL_INFORMATION_PAGE_XPATH = "//div[contains(@data-stid, 'property-offer')]";
+    public static final String NAME_ROOM_HOTEL_INFORMATION_PAGE_XPATH = SELECT_LIST_CARD_ROOM_HOTEL_INFORMATION_PAGE_XPATH + "[%d]//*[@class=\"uitk-heading-6\"]";
+    public static final String AREA_ROOM_HOTEL_INFORMATION_PAGE_XPATH = SELECT_LIST_CARD_ROOM_HOTEL_INFORMATION_PAGE_XPATH + "[%d]//*[@role=\"listitem\"][1]/span";
+    public static final String NUMBER_OF_PEOPLE_SLEEP_ROOM_HOTEL_INFORMATION_PAGE_XPATH = SELECT_LIST_CARD_ROOM_HOTEL_INFORMATION_PAGE_XPATH + "[%d]//*[@role=\"listitem\"][2]/span";
+    public static final String PRIZE_PER_NIGHT_ROOM_HOTEL_INFORMATION_PAGE_XPATH = SELECT_LIST_CARD_ROOM_HOTEL_INFORMATION_PAGE_XPATH + "[%d]//*[@data-stid=\"price-lockup-wrapper\"]//span[@data-stid]";
+
     public static final String SELECT_LIST_NAME_ROOMS_XPATH = "//*[@class=\"uitk-heading-6\"]";
     public static final String LINK_MORE_DETAILS_XPATH = "//*[@data-stid=\"section-roomtype\"]/button";
     public static final String HOTEL_INFORMATION_PAGE_BUTTON_CHECK_IN_XPATH = "//*[@id=\"hotels-check-in-btn\"]";
