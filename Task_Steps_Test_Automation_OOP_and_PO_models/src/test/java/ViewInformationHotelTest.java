@@ -1,3 +1,4 @@
+import io.qameta.allure.Epic;
 import io.qameta.allure.Link;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,6 +9,7 @@ import steps.ViewHotelInformationStep;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Epic("Viewing information hotel")
 class ViewInformationHotelTest extends BaseTest {
     private ResultsToSearchingSteps resultsSteps = new ResultsToSearchingSteps();
     private ViewHotelInformationStep viewHotelSteps = new ViewHotelInformationStep();

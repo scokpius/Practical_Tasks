@@ -1,3 +1,4 @@
+import io.qameta.allure.Epic;
 import io.qameta.allure.Link;
 import object.Hotel;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,7 +10,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-//@Epic("ChangeSearchQueryTest")
+@Epic("Change search query")
 class ChangeSearchQueryTest extends BaseTest {
     private ResultsToSearchingSteps resultsSteps = new ResultsToSearchingSteps();
     private List<Hotel> hotelsResultFirst;

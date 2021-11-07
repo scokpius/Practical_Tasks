@@ -1,3 +1,4 @@
+import io.qameta.allure.Epic;
 import io.qameta.allure.Link;
 import object.Hotel;
 import org.junit.jupiter.api.AfterEach;
@@ -10,6 +11,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@Epic("Filters after search results")
 class FilterTest extends BaseTest {
 
     private ResultsToSearchingSteps resultsSteps = new ResultsToSearchingSteps();
@@ -26,16 +28,6 @@ class FilterTest extends BaseTest {
     }
 
     @Test
-    @DisplayName(value = "Test Case ES-10: Sorted hotels by price")
-    @Link(value = "Test Case ES-10: Sorted hotels by price",
-            url = "https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit#heading=h.eh21vpkmpxeu")
-    void sortedHotelsByPrice() {
-        resultsSteps.selectSortByFilter();
-        List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
-        assertTrue(ComponentsForTest.isCheckSortingOfListByCost(actualList));
-    }
-
-    @Test
     @DisplayName(value = "Test Case ES-9: Sorted hotels by hotel class ")
     @Link (value = "Test Case ES-9: Sorted hotels by hotel class",
             url = "https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit#heading=h.xnx5omqanyid")
@@ -45,5 +37,16 @@ class FilterTest extends BaseTest {
         List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
         assertTrue(ComponentsForTest.isCheckSortingOfListByClass(actualList) &&
                 ComponentsForTest.isCheckFirstItemFromListForHotelClass(actualList, classHotel));
+    }
+
+
+    @Test
+    @DisplayName(value = "Test Case ES-10: Sorted hotels by price")
+    @Link(value = "Test Case ES-10: Sorted hotels by price",
+            url = "https://docs.google.com/document/d/1MSDmG5ouMj-DQEnc1fwAYcTxup2pyyXMOPYOfRAeWnQ/edit#heading=h.eh21vpkmpxeu")
+    void sortedHotelsByPrice() {
+        resultsSteps.selectSortByFilter();
+        List<Hotel> actualList = resultsSteps.getHotelsListFromResultsPage();
+        assertTrue(ComponentsForTest.isCheckSortingOfListByCost(actualList));
     }
 }
