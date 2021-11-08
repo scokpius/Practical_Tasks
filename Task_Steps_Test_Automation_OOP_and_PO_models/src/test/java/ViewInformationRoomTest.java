@@ -14,9 +14,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ViewInformationRoomTest extends BaseTest {
-    private ResultsToSearchingSteps resultsSteps = new ResultsToSearchingSteps();
-    private ViewHotelInformationStep viewHotelSteps = new ViewHotelInformationStep();
-    private ViewRoomInformationSteps viewRoomSteps = new ViewRoomInformationSteps();
+    private final ResultsToSearchingSteps resultsSteps = new ResultsToSearchingSteps();
+    private final ViewHotelInformationStep viewHotelSteps = new ViewHotelInformationStep();
+    private final ViewRoomInformationSteps viewRoomSteps = new ViewRoomInformationSteps();
 
     @BeforeEach
     void createSearchQuery() {
