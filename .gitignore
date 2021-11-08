@@ -1,6 +1,7 @@
-/*/.idea/
-/*/target/*
-/*/.idea/*
-/*/.reports/*
-/*/.target/*
-/*/.allure/*
+.idea
+/target/
+*.iml
+/Task_Animate_the_OOP_model/target/
+/Task_PageObject_the_OOP_model/target/
+/Task_Steps_Test_Automation_OOP_and_PO_models/target/
+/Task_Steps_OOP_and_PO_models/target/
