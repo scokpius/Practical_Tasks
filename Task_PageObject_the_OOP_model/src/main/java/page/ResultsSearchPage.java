@@ -107,7 +107,7 @@ public class ResultsSearchPage {
     }
 
     public HotelInformationPage goToHotelInformationPage() {
-     //   buttonContinue.click();
+
         switchTo().window(1);
         HotelInformationPage hotelInformationPage = new HotelInformationPage();
         Selenide.sleep(10000);

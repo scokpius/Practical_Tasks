@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 public class ViewRoomInformationSteps {
     RoomInformationPage roomInformationPage = new RoomInformationPage();
 
-    public HotelRoom getInformationRoomFromRoomInformationPage(){
+    public HotelRoom getInformationRoomFromRoomInformationPage() {
         return HotelRoom.builder()
                 .hotelRoomName(roomInformationPage.getFielderNameRoom().getText())
                 .photoRoom(roomInformationPage.getImgPhoto().getAttribute("src"))
@@ -22,7 +22,8 @@ public class ViewRoomInformationSteps {
                         .build())
                 .build();
     }
-    public BigDecimal getTotalPrice(){
+
+    public BigDecimal getTotalPrice() {
         return BigDecimal.valueOf(Double.parseDouble(roomInformationPage.getSpanPrice().getText().replace("$", "")
                 .replace(",", "")));
     }
