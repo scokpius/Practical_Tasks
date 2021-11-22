@@ -1,12 +1,14 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import utils.RunnerExtension;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
-
+@ExtendWith(RunnerExtension.class)
 public class  BaseTest {
     @BeforeAll
     public static void setUp(){
